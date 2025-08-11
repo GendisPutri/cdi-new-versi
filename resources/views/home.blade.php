@@ -201,80 +201,83 @@
   margin-top: 20px;
 }
 
-.card-custom {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 220px;
-  padding: 0;
-  background-color: #fff;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+ .card-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
 
-.card-custom:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
+    .card {
+      background: white;
+      border-radius: 20px;
+      width: 250px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
 
-.card-custom img {
-  width: 100%;
-  height: auto;
-  border-bottom: 1px solid #eee;
-}
+    .card img {
+      width: 100%;
+      height: auto;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
 
-.card-custom .label {
-  font-size: 16px;
-  font-weight: bold;
-  padding: 10px 10px 0;
-  color: #000;
-}
+    .card-content {
+      padding: 15px;
+      text-align: left;
+    }
 
-.card-custom .type {
-  font-size: 13px;
-  color: gray;
-  padding-bottom: 10px;
-}
+    .card-title {
+      font-size: 14px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-.card-custom button {
-  background: linear-gradient(90deg, #AF76EF 0%, #FFFFFF 50%, #AF76EF 100%);
-  border: none;
-  padding: 8px 20px;
-  margin-bottom: 15px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-weight: 600;
-  color: #000;
-  transition: background 0.3s ease;
-}
+    .badge {
+      font-size: 10px;
+      background-color: #f2f2f2;
+      padding: 3px 8px;
+      border-radius: 999px;
+    }
 
-.card-custom button:hover {
-  background: #AF76EF;
-  color: #fff;
-}
-
+    .pesan-btn {
+      display: block;
+      width: 90%;
+      margin: 10px auto;
+      padding: 10px 0;
+      background: linear-gradient(to right, rgb(194, 140, 255), rgb(255, 255, 255), rgb(194, 140, 255));
+      border: none;
+      border-radius: 999px;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
 .more-button {
-  margin-top: 30px;
   background-color: #ffc400;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  color: #4b0082; /* ungu tua */
   font-weight: bold;
-  color: black;
+  font-size: 14px;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  display: inline-block;
+    text-decoration: none; 
+  transition: all 0.3s ease;
 }
 
 .more-button:hover {
   background-color: #e6ac00;
   transform: scale(1.05);
-  transition: all 0.3s ease;
+}
+
+@media (max-width: 576px) {
+  .card-custom {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 
 .mentor-title {
@@ -306,43 +309,29 @@
   color: #b07cf7;
 }
 
- .shimmer-box {
-  width: 80px;
-  height: 80px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #ffffff 0%, #e5e7eb 100%);
-  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.5),
-              0 0 10px rgba(0, 0, 0, 0.05);
-  transition: 0.3s ease;
-}
-
-.custom-section {
+.logo-box {
+   background: transparent; /* nggak ada bungkus putih */
+  box-shadow: none; /* kalau mau tanpa bayangan */
+  border-radius: 0px;
+  aspect-ratio: 1 / 1;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 40px;
-  padding: 60px 20px;
-  background: linear-gradient(to bottom, #ffffff, #f3e8ff); /* putih ke ungu muda */
+  overflow: hidden;
 }
 
-@media (min-width: 768px) {
-  .custom-section {
-    flex-direction: row;
-  }
+
+.logo-box img {
+  max-width: 50%;
+  max-height: 50%;
+  object-fit: contain;
 }
 
-.image-container {
-  max-width: 300px;
-  width: 100%;
+.mitra .item {
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
-.main-image {
-  width: 100%;
-  height: auto;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-}
 
 .text-content {
   max-width: 400px;
@@ -367,6 +356,94 @@
   color: #555;
   margin-bottom: 24px;
 }
+
+.carousel-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+    }
+    .carousel-row {
+      display: flex;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .carousel-track {
+      display: flex;
+      animation: scroll 15s linear infinite;
+    }
+    .box {
+      flex: 0 0 auto;
+      width: 100px;
+      height: 100px;
+      background: #ccc;
+      border-radius: 10px;
+      margin-right: 10px;
+    }
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+.owl-carousel .item {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      text-align: left;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      margin: 10px;
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+   .item {
+  padding: 16px;                  /* Mengatur jarak isi dalam card */
+  background-color: white;       /* Warna latar belakang card */
+  border-radius: 10px;           /* Membuat sudut melengkung */
+  text-align: center;            /* Pusatkan teks */
+}
+
+
+ .frame-container {
+            flex-shrink: 0;
+        }
+        
+        .frame-gradient {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            padding: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .frame-gradient img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+    .item h4 {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .item p.role {
+      font-size: 12px;
+      color: gray;
+      margin: 2px 0 8px;
+    }
+
+    .item p.text {
+      font-size: 12px;
+      color: #333;
+    }
 
 .cta-button {
   display: inline-block;
@@ -587,52 +664,148 @@
   <div class="description">
     Kami menyediakan berbagai program unggulan seperti Kursus pelatihan digital marketing, Pelatihan content creator, Pelatihan design grafis, dan lain sebagainya yang cocok untuk pemula
   </div>
+
   <div class="nav">
-    <a href="#" class="active" onclick="setActiveLink(this)">Reguler</a>
-    <a href="#" onclick="setActiveLink(this)">Coorporate</a>
-    <a href="#" onclick="setActiveLink(this)">Profesi</a>
-    <a href="#" onclick="setActiveLink(this)">Sertifikasi</a>
-    <a href="#" onclick="setActiveLink(this)">Magang/Intern Program</a>
+    <a href="#" data-target="reguler" onclick="setActiveLink(this, event)">Reguler</a>
+    <a href="#" data-target="coorporate" onclick="setActiveLink(this, event)">Coorporate</a>
+    <a href="#" data-target="profesi" onclick="setActiveLink(this, event)">Profesi</a>
+    <a href="#" data-target="sertifikasi" onclick="setActiveLink(this, event)">Sertifikasi</a>
+    <a href="#" data-target="magang" onclick="setActiveLink(this, event)">Magang</a>
   </div>
 
-  <div class="row justify-content-center">
-    <div class="col-sm-6 col-md-4 col-lg-2">
-      <div class="card-custom">
-        <img src="{{ asset('img/reguler-1.png') }}" alt="Pelatihan Digital Marketing">
-        <div class="label">Pelatihan Digital Marketing</div>
-        <div class="type">Reguler</div>
-        <button class="btn btn-primary">Pesan</button>
+  <div class="program-wrapper">
+    <div class="row justify-content-center program-content content-reguler">
+      <div class="card-container d-flex flex-wrap justify-content-center">
+        <div class="card">
+          <img src="{{asset('img/reguler-1.png')}}" alt="Digital Marketing">
+          <div class="card-content">
+            <p class="card-title">Pelatihan Digital Marketing <span class="badge">Reguler</span></p>
+          </div>
+          <button class="pesan-btn">Pesan</button>
+        </div>
+
+        <div class="card">
+          <img src="{{asset('img/reguler-2.png')}}" alt="Content Creator">
+          <div class="card-content">
+            <p class="card-title">Pelatihan Content Creator <span class="badge">Reguler</span></p>
+          </div>
+          <button class="pesan-btn">Pesan</button>
+        </div>
+
+        <div class="card">
+          <img src="{{asset('img/reguler-3.png')}}" alt="Graphic Designer">
+          <div class="card-content">
+            <p class="card-title">Pelatihan Graphic Designer <span class="badge">Reguler</span></p>
+          </div>
+          <button class="pesan-btn">Pesan</button>
+        </div>
+
+        <div class="card">
+          <img src="{{asset('img/reguler-4.png')}}" alt="Operator Komputer Kantor">
+          <div class="card-content">
+            <p class="card-title">Pelatihan Operator Komputer <span class="badge">Reguler</span></p>
+          </div>
+          <button class="pesan-btn">Pesan</button>
+        </div>
       </div>
     </div>
-    <div class="col-sm-6 col-md-4 col-lg-2">
-      <div class="card-custom">
-        <img src="{{ asset('img/reguler-2.png') }}" alt="Pelatihan Content Creator">
-        <div class="label">Pelatihan Content Creator</div>
-        <div class="type">Reguler</div>
-        <button class="btn btn-primary">Pesan</button>
+
+    <div class="row justify-content-center program-content content-coorporate d-none">
+      <div class="card-container d-flex flex-wrap justify-content-center">
+        <div class="card">
+          <img src="{{asset('img/reguler-4.png')}}" alt="Operator Komputer Kantor">
+          <div class="card-content">
+            <p class="card-title">Pelatihan Operator Komputer <span class="badge">Coorporate</span></p>
+          </div>
+          <button class="pesan-btn">Pesan</button>
+        </div>
       </div>
     </div>
-    <div class="col-sm-6 col-md-4 col-lg-2">
-      <div class="card-custom">
-        <img src="{{ asset('img/reguler-3.png') }}" alt="Pelatihan Graphic Designer">
-        <div class="label">Pelatihan Graphic Designer</div>
-        <div class="type">Reguler</div>
-        <button class="btn btn-primary">Pesan</button>
+
+    <div class="row justify-content-center program-content content-profesi d-none">
+      <div class="card-container d-flex flex-wrap justify-content-center">
+        <div class="card">
+          <img src="{{asset('img/reguler-3.png')}}" alt="Graphic Designer">
+          <div class="card-content">
+            <p class="card-title">Pelatihan Graphic Designer <span class="badge">Profesi</span></p>
+          </div>
+          <button class="pesan-btn">Pesan</button>
+        </div>
       </div>
     </div>
-    <div class="col-sm-6 col-md-4 col-lg-2">
-      <div class="card-custom">
-        <img src="{{ asset('img/reguler-4.png') }}" alt="Pelatihan Komputer Kantor">
-        <div class="label">Pelatihan Komputer Kantor</div>
-        <div class="type">Reguler</div>
-        <button class="btn btn-primary">Pesan</button>
+
+    <div class="row justify-content-center program-content content-sertifikasi d-none">
+      <div class="card-container d-flex flex-wrap justify-content-center">
+        <div class="card">
+          <img src="{{asset('img/reguler-2.png')}}" alt="Content Creator">
+          <div class="card-content">
+            <p class="card-title">Pelatihan Content Creator <span class="badge">Sertifikasi</span></p>
+          </div>
+          <button class="pesan-btn">Pesan</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center program-content content-magang d-none">
+      <div class="card-container d-flex flex-wrap justify-content-center">
+        <div class="card">
+          <img src="{{asset('img/reguler-2.png')}}" alt="Content Creator">
+          <div class="card-content">
+            <p class="card-title">Pelatihan Content Creator <span class="badge">Magang</span></p>
+          </div>
+          <button class="pesan-btn">Pesan</button>
+        </div>
+
+        <div class="card">
+          <img src="{{asset('img/reguler-3.png')}}" alt="Graphic Designer">
+          <div class="card-content">
+            <p class="card-title">Pelatihan Graphic Designer <span class="badge">Magang</span></p>
+          </div>
+          <button class="pesan-btn">Pesan</button>
+        </div>
       </div>
     </div>
   </div>
+
   <div class="text-center mt-3">
-    <button class="more-button">Lihat Selengkapnya</button>
+    <a class="more-button" id="lihat-selengkapnya" href="/program/reguler">Lihat Selengkapnya</a>
   </div>
+
+  <script>
+    const urlMap = {
+      reguler: 'reguler',
+      coorporate: 'coorporate',
+      profesi: 'profesi',
+      sertifikasi: 'sertifikasi',
+      magang: 'magang'
+    };
+
+    function setActiveLink(el, event) {
+      event.preventDefault();
+
+      document.querySelectorAll('.nav a').forEach(link => link.classList.remove('active'));
+      el.classList.add('active');
+
+      const target = el.getAttribute('data-target');
+
+      document.querySelectorAll('.program-content').forEach(div => {
+        div.classList.add('d-none');
+      });
+
+      document.querySelector(`.content-${target}`).classList.remove('d-none');
+
+      const lihatSelengkapnya = document.getElementById('lihat-selengkapnya');
+      if (lihatSelengkapnya) {
+        lihatSelengkapnya.href = `/program/${urlMap[target]}`;
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('[data-target="reguler"]').click();
+    });
+  </script>
 </section>
+
 <section class="mentor-section text-center py-5">
   <div class="container">
     <h2 class="mentor-title mb-2">
@@ -688,56 +861,175 @@
     <p class="mb-5 fw-semibold">
       <span class="highlight">Campusdigital</span> bermitra dengan Lembaga Sertifikasi Profesi berlisensi BNSP, institusi pendidikan, dan perusahaan industri untuk menghadirkan pelatihan, sertifikasi, dan magang.
     </p>
-
-    <div class="owl-carousel owl-theme">
-      @for ($chunk = 0; $chunk < 4; $chunk++) {{-- 4 slide (32/8) --}}
-        <div class="item">
-          <div class="row row-cols-4 g-3">
-            @for ($i = 0; $i < 8; $i++) {{-- 8 gambar per slide --}}
-              <div class="col">
-                <div class="shimmer-box">
-                  <img src="{{ asset('img/mentor-1.png') }}" alt="Mitra" class="img-fluid" style="max-height: 80%; object-fit: contain;">
-                </div>
-              </div>
-            @endfor
-          </div>
-        </div>
-      @endfor
-    </div>
   </div>
 </section>
 
+<section class="mitra">
+    <div id="mitra-carousel" class="owl-carousel owl-theme">
 
+     <div class="carousel-container">
+    <div class="carousel-row">
+      <div class="carousel-track">
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+      </div>
+    </div>
+    <div class="carousel-row">
+      <div class="carousel-track">
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+      </div>
+    </div>
+    <div class="carousel-row">
+      <div class="carousel-track">
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+      </div>
+    </div>
+    <div class="carousel-row">
+      <div class="carousel-track">
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="bg-gradient-to-b from-purple-100 to-white py-12 px-6 text-center">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">Testimoni Alumni</h2>
     <p class="text-gray-600 max-w-3xl mx-auto mb-10">
       Peserta Campusdigital merasa puas dengan materi yang mudah dipahami, mentor yang berpengalaman, serta proses pelatihan dan sertifikasi BNSP di Semarang yang profesional dan terstruktur.
     </p>
 
-    <div class="owl-carousel owl-theme">
-      <!-- Testimonial card (repeat as needed) -->
-      <div class="bg-white rounded-xl shadow p-4 mx-2">
-        <img src="{{ asset('img/mentor-1.png') }}" alt="Foto Alumni" class="mx-auto rounded-full w-16 h-16 mb-2">
-        <h3 class="font-semibold">Wahana Alfin Sihab</h3>
-        <p class="text-sm text-gray-500 mb-2">Social Media Specialist</p>
-        <p class="text-sm italic text-gray-700">"Pekerjaan yang saya dapatkan cocok untuk pemula dan cepat paham"</p>
+<div id="testimoni-carousel" class="owl-carousel owl-theme">
+      <div class="item">
+        <div class="frame-container">
+            <div class="frame-gradient">
+                <img src="{{asset ('img/mentor-1.png')}}" alt="Profile">
+            </div>
+        </div>
+        <h4>Wahana Alfin Sihab</h4>
+        <p class="role">Social Media Specialist</p>
+        <p class="text">"Pelajaran yang saya dapatkan cocok untuk pemula dan cepat paham"</p>
       </div>
-
-      <div class="bg-white rounded-xl shadow p-4 mx-2">
-        <img src="{{ asset('img/mentor-1.png') }}" alt="Foto Alumni" class="mx-auto rounded-full w-16 h-16 mb-2">
-        <h3 class="font-semibold">Wahana Alfin Sihab</h3>
-        <p class="text-sm text-gray-500 mb-2">Social Media Specialist</p>
-        <p class="text-sm italic text-gray-700">"Pekerjaan yang saya dapatkan cocok untuk pemula dan cepat paham"</p>
+      <div class="item">
+        <div class="frame-container">
+            <div class="frame-gradient">
+                <img src="{{asset ('img/mentor-1.png')}}" alt="Profile">
+            </div>
+        </div>
+        <h4>Indah Permata Sari</h4>
+        <p class="role">UI/UX Designer</p>
+        <p class="text">"Mentornya sangat membantu dan materinya sangat aplikatif di dunia kerja"</p>
       </div>
-
-      <div class="bg-white rounded-xl shadow p-4 mx-2">
-        <img src="{{ asset('img/mentor-1.png') }}" alt="Foto Alumni" class="mx-auto rounded-full w-16 h-16 mb-2">
-        <h3 class="font-semibold">Wahana Alfin Sihab</h3>
-        <p class="text-sm text-gray-500 mb-2">Social Media Specialist</p>
-        <p class="text-sm italic text-gray-700">"Pekerjaan yang saya dapatkan cocok untuk pemula dan cepat paham"</p>
+      <div class="item">
+        <div class="frame-container">
+            <div class="frame-gradient">
+                <img src="{{asset ('img/mentor-1.png')}}" alt="Profile">
+            </div>
+        </div>
+        <h4>Rizky Hidayat</h4>
+        <p class="role">Data Analyst</p>
+        <p class="text">"Kursus yang tepat untuk memperdalam skill dan siap bersaing di industri"</p>
+      </div>
+      <div class="item">
+       <div class="frame-container">
+            <div class="frame-gradient">
+                <img src="{{asset ('img/mentor-1.png')}}" alt="Profile">
+            </div>
+        </div>
+        <h4>Ayu Lestari</h4>
+        <p class="role">Digital Marketer</p>
+        <p class="text">"Modul pelatihan sangat jelas dan mudah dipahami"</p>
+      </div>
+      <div class="item">
+        <div class="frame-container">
+            <div class="frame-gradient">
+                <img src="{{asset ('img/mentor-1.png')}}" alt="Profile">
+            </div>
+        </div>
+        <h4>Fajar Prasetyo</h4>
+        <p class="role">Frontend Developer</p>
+        <p class="text">"Sangat bermanfaat dan membuat saya percaya diri melamar kerja"</p>
+      </div>
+      <div class="item">
+        <div class="frame-container">
+            <div class="frame-gradient">
+                <img src="{{asset ('img/mentor-1.png')}}" alt="Profile">
+            </div>
+        </div>
+        <h4>Nur Aini</h4>
+        <p class="role">Product Manager</p>
+        <p class="text">"Sertifikasi BNSP sangat berguna untuk karier saya"</p>
       </div>
     </div>
-  </section>
+    </section>
+<script>
+  $(document).ready(function(){
+
+    // Carousel untuk mitra (kotak logo)
+    $('#mitra-carousel').owlCarousel({
+      items: 1,
+      loop: true,
+      margin: 10,
+      autoplay: true,
+      autoplayTimeout: 1000
+    });
+
+    // Carousel untuk testimoni alumni
+    $('#testimoni-carousel').owlCarousel({
+      loop: true,
+      margin: 20,
+      nav: false,
+      dots: true,
+      autoplay: true,
+      autoplayTimeout: 4000,
+      responsive: {
+        0: { items: 1 },
+        600: { items: 2 },
+        1000: { items: 3 },
+        1280: { items: 5 }
+      }
+    });
+
+  });
+</script>
+
 
   <section class="custom-section">
   <!-- Gambar Utama -->
@@ -847,4 +1139,5 @@
       </div>
     </div>
   </section>
+
 @endsection

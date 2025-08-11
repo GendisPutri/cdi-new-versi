@@ -135,7 +135,8 @@
       }
     }
     </style>
- <header>
+    <header>
+     <div class="container d-flex align-items-center justify-content-between">
     <div class="logo">
       <img src="{{asset ('img/logo 1.png')}}" alt="Campus Digital">
     </div>
@@ -205,3 +206,5 @@
 </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
   </script>
+    </div>
+ 

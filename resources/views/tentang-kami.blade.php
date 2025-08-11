@@ -250,72 +250,74 @@
 }
 
 .card-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
 
-.cabang-card {
-  background-color: #fff;
-  width: 300px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  text-align: left;
-  transition: 0.3s ease;
-}
+    .cabang-card {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background-color: #000;
+    }
 
-.cabang-card:hover {
-  transform: translateY(-5px);
-}
+    .gambar-cabang {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.6);
+    }
 
-.gambar-cabang {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+    .card-body {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 15px;
+      width: 100%;
+      color: #fff;
+    }
 
-.card-body {
-  padding: 15px;
-}
+    .judul-dan-wa {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
 
-.judul-dan-wa {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-}
+    .judul-dan-wa h4 {
+      font-size: 16px;
+      margin: 0;
+      color: #fff;
+    }
 
-.judul-dan-wa h4 {
-  font-size: 16px;
-  color: #000;
-  margin: 0;
-}
+    .judul-dan-wa img {
+      width: 20px;
+      height: 20px;
+    }
 
-.judul-dan-wa img {
-  width: 20px;
-  height: 20px;
-}
+    .info-baris {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
 
-.info-baris {
-  display: flex;
-  align-items: flex-start;
-}
+    .info-baris img {
+      width: 16px;
+      height: 16px;
+      margin-top: 3px;
+    }
 
-.info-baris img {
-  width: 16px;
-  height: 16px;
-  margin-right: 8px;
-  margin-top: 3px;
-}
-
-.alamat span {
-  font-size: 14px;
-  color: #333;
-  display: block;
-  line-height: 1.4;
-}
+    .alamat span {
+      font-size: 13px;
+      color: #eee;
+      display: block;
+      line-height: 1.3;
+    }
 
   </style>
 </head>
