@@ -308,30 +308,38 @@
 .highlight {
   color: #b07cf7;
 }
-
-.logo-box {
-   background: transparent; /* nggak ada bungkus putih */
-  box-shadow: none; /* kalau mau tanpa bayangan */
-  border-radius: 0px;
-  aspect-ratio: 1 / 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+.mitra {
+    padding: 20px;
 }
 
-
-.logo-box img {
-  max-width: 50%;
-  max-height: 50%;
-  object-fit: contain;
+.mitra .box {
+    margin-bottom: 15px; /* jarak antar baris */
 }
 
+.mitra .box img {
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block; /* biar nggak ada space bawah */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* opsional, buat efek halus */
+    border: none; /* pastikan tidak ada border abu-abu */
+}
+  /* Biar jadi 4 baris */
+  #mitra-carousel .owl-stage {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #mitra-carousel .owl-item {
+    flex: 0 0 calc(100% / 10); /* 10 kolom per baris */
+    display: flex;
+    justify-content: center;
+  }
 .mitra .item {
   background: transparent !important;
   box-shadow: none !important;
 }
-
 
 .text-content {
   max-width: 400px;
@@ -444,20 +452,62 @@
       font-size: 12px;
       color: #333;
     }
+.custom-section {
+  padding: 40px 20px;
+  background: linear-gradient(to bottom, #f8f4ff, #ffffff);
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.image-container {
+  flex: 1;
+  text-align: center;
+}
+
+.main-image {
+  max-width: 300px;
+  border-radius: 20px;
+}
+
+.text-content {
+  flex: 1;
+  max-width: 500px;
+}
+
+.text-content h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.text-content p {
+  color: #555;
+  margin-bottom: 20px;
+}
 
 .cta-button {
   display: inline-block;
-  padding: 12px 24px;
-  background-color: #7c3aed; /* ungu */
-  color: #fff;
-  text-decoration: none;
+  padding: 10px 20px;
+  border: 1.5px solid #8b5cf6;
   border-radius: 8px;
-  transition: background-color 0.3s ease;
+  color: #8b5cf6;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: #6b21a8; /* ungu tua */
+  background: #8b5cf6;
+  color: #fff;
 }
+
 
 .artikel-section {
       padding: 40px 20px;
@@ -806,55 +856,58 @@
   </script>
 </section>
 
-<section class="mentor-section text-center py-5">
+<section class="mentor-section text-center py-5" style="background: linear-gradient(to right, #f8f5ff, #ffffff);">
   <div class="container">
-    <h2 class="mentor-title mb-2">
+    <h2 class="mentor-title mb-2 fw-bold">
       Mentor <span class="highlight">Campusdigital</span>
     </h2>
-    <p class="mentor-description mb-4">
+    <p class="mentor-description mb-4 text-muted">
       praktisi digital marketing, content creator, dan program digital lainnya siap membimbing pelatihan dan sertifikasi BNSP
     </p>
 
-    <div class="row justify-content-center g-3">
-      <div class="col-6 col-sm-4 col-md-3">
-        <div class="mentor-card card text-center">
-          <img src="{{ asset('img/mentor-1.png')}}" class="card-img-top" alt="Mentor">
-          <div class="card-body">
-            <h5 class="card-title">M. Syarifudin yusuf</h5>
-            <p class="card-text text-muted">Social Media Specialist</p>
-          </div>
-        </div>
+   <div class="row justify-content-center">
+  <div class="card-container d-flex flex-wrap justify-content-center">
+    
+    <div class="card">
+      <img src="{{ asset('img/mentor-1.png') }}" alt="Mentor">
+      <div class="card-content text-center">
+        <p class="card-judul mb-1">M. Syarifudin yusuf</p>
+        <p class="card-text text-muted mb-0">Social Media Specialist</p>
       </div>
-      <div class="col-6 col-sm-4 col-md-3">
-        <div class="mentor-card card text-center">
-          <img src="{{ asset('img/mentor-1.png')}}" class="card-img-top" alt="Mentor">
-          <div class="card-body">
-            <h5 class="card-title">M. Syarifudin yusuf</h5>
-            <p class="card-text text-muted">Social Media Specialist</p>
-          </div>
-        </div>
+    </div>
+
+    <div class="card">
+      <img src="{{ asset('img/mentor-1.png') }}" alt="Mentor">
+      <div class="card-content text-center">
+        <p class="card-judul mb-1">M. Syarifudin yusuf</p>
+        <p class="card-text text-muted mb-0">Social Media Specialist</p>
       </div>
-      <div class="col-6 col-sm-4 col-md-3">
-        <div class="mentor-card card text-center">
-          <img src="{{ asset('img/mentor-1.png')}}" class="card-img-top" alt="Mentor">
-          <div class="card-body">
-            <h5 class="card-title">M. Syarifudin yusuf</h5>
-            <p class="card-text text-muted">Social Media Specialist</p>
-          </div>
-        </div>
+    </div>
+
+    <div class="card">
+      <img src="{{ asset('img/mentor-1.png') }}" alt="Mentor">
+      <div class="card-content text-center">
+        <p class="card-judul mb-1">M. Syarifudin yusuf</p>
+        <p class="card-text text-muted mb-0">Social Media Specialist</p>
       </div>
-      <div class="col-6 col-sm-4 col-md-3">
-        <div class="mentor-card card text-center">
-          <img src="{{ asset('img/mentor-1.png')}}" class="card-img-top" alt="Mentor">
-          <div class="card-body">
-            <h5 class="card-title">M. Syarifudin yusuf</h5>
-            <p class="card-text text-muted">Social Media Specialist</p>
-          </div>
-        </div>
+    </div>
+
+    <div class="card">
+      <img src="{{ asset('img/mentor-1.png') }}" alt="Mentor">
+      <div class="card-content text-center">
+        <p class="card-judul mb-1">M. Syarifudin yusuf</p>
+        <p class="card-text text-muted mb-0">Social Media Specialist</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
       </div>
     </div>
   </div>
 </section>
+
 <section class="mitra-container text-center py-5">
   <div class="container">
     <h2 class="mb-4"><strong>Mitra <span class="highlight">Campusdigital</span></strong></h2>
@@ -864,72 +917,49 @@
   </div>
 </section>
 
-<section class="mitra">
-    <div id="mitra-carousel" class="owl-carousel owl-theme">
-
-     <div class="carousel-container">
-    <div class="carousel-row">
-      <div class="carousel-track">
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-      </div>
-    </div>
-    <div class="carousel-row">
-      <div class="carousel-track">
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-      </div>
-    </div>
-    <div class="carousel-row">
-      <div class="carousel-track">
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-      </div>
-    </div>
-    <div class="carousel-row">
-      <div class="carousel-track">
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-        <div class="box"><img src="{{asset ('img/mentor-1.png')}}" alt=""></div>
-      </div>
-    </div>
+<section class="mitra" id="mitra">
+  <!-- Baris 1 -->
+  <div class="carousel-row owl-carousel">
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+  </div>
+  <!-- Baris 2 -->
+  <div class="carousel-row owl-carousel">
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+  </div>
+  <!-- Baris 3 -->
+  <div class="carousel-row owl-carousel">
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+  </div>
+  <!-- Baris 4 -->
+  <div class="carousel-row owl-carousel">
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
+    <div class="box"><img src="{{asset('img/mentor-1.png')}}" alt=""></div>
   </div>
 </section>
+
 <section class="bg-gradient-to-b from-purple-100 to-white py-12 px-6 text-center">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">Testimoni Alumni</h2>
     <p class="text-gray-600 max-w-3xl mx-auto mb-10">
@@ -1000,16 +1030,20 @@
     </div>
     </section>
 <script>
-  $(document).ready(function(){
-
-    // Carousel untuk mitra (kotak logo)
-    $('#mitra-carousel').owlCarousel({
-      items: 1,
-      loop: true,
-      margin: 10,
-      autoplay: true,
-      autoplayTimeout: 1000
+    $(document).ready(function(){
+        $('.carousel-row').owlCarousel({
+      loop:true,
+      margin:15,
+      autoplay:true,
+      autoplayTimeout:2000,
+      autoplayHoverPause:true,
+      responsive:{
+        0:{ items:4 },
+        600:{ items:6 },
+        1000:{ items:10 }
+      }
     });
+  });
 
     // Carousel untuk testimoni alumni
     $('#testimoni-carousel').owlCarousel({
@@ -1027,21 +1061,22 @@
       }
     });
 
-  });
 </script>
 
 
-  <section class="custom-section">
-  <!-- Gambar Utama -->
-  <div class="image-container">
-    <img src="{{ asset('img/dua.png')}}" alt="Admin membantu" class="main-image" />
-  </div>
+<section class="custom-section">
+  <div class="content-wrapper">
+    <!-- Gambar Utama -->
+    <div class="image-container">
+      <img src="{{ asset('img/dua.png')}}" alt="Admin membantu" class="main-image" />
+    </div>
 
-  <!-- Teks dan Tombol -->
-  <div class="text-content">
-    <h2>Bingung pilih pelatihan yang ingin diikuti?</h2>
-    <p>Admin kami akan membantu dan menjawab segala keresahanmu</p>
-    <a href="#hubungi-kami" class="cta-button">Hubungi Kami</a>
+    <!-- Teks dan Tombol -->
+    <div class="text-content">
+      <h2>Bingung pilih pelatihan yang ingin diikuti?</h2>
+      <p>Admin kami akan memandu dan menjawab segala keresahanmu</p>
+      <a href="#hubungi-kami" class="cta-button">Hubungi Kami</a>
+    </div>
   </div>
 </section>
 
