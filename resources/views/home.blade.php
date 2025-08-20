@@ -33,6 +33,10 @@
       font-size: 16px;
       color: #4B5563;
     }
+    .decor-top-left{
+      top:20px;
+      left:20px;
+    }
     .btn-daftar {
       background: #FACC15;
       color: #000;
@@ -42,6 +46,11 @@
       text-decoration: none;
       margin-right: 10px;
     }
+        .btn-daftar:hover {
+            background: #000;
+            color: #FACC15;
+            transform: translateY(-2px);
+        }
     .btn-kurikulum {
       background: #fff;
       color: #6D28D9;
@@ -51,6 +60,11 @@
       border-radius: 6px;
       text-decoration: none;
     }
+      .btn-kurikulum:hover {
+            background: #6D28D9;
+            color: white;
+            transform: translateY(-2px);
+        }
     .tentang-kami-img img {
       width: 100%;
       max-width: 400px;

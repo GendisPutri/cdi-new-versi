@@ -70,6 +70,11 @@
       text-decoration: none;
       font-size: 14px;
     }
+    .btn-nav:hover {
+            background: #000;
+            color: #FACC15;
+            transform: translateY(-2px);
+        }
 
     .btn-nav-daf {
       background: #fff;
@@ -81,6 +86,11 @@
       text-decoration: none;
       font-size: 14px;
     }
+    .btn-nav-daf:hover {
+            background: #6D28D9;
+            color: white;
+            transform: translateY(-2px);
+        }
 
     .dropdown {
       position: relative;
