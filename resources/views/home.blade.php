@@ -6,6 +6,13 @@
 @section('content')
 
 <style>
+/* Responsive Breakpoint */
+@media(min-width: 576px) { .col-6 { flex: 1 1 48%; } }
+@media(min-width: 992px) {
+  .col-4 { flex: 1 1 30%; }
+  .col-6 { flex: 1 1 48%; }
+  .col-12 { flex: 1 1 100%; }
+}
     body {
       font-family: 'Poppins', sans-serif;
       background: #f9f5ff;
@@ -651,24 +658,29 @@
     }
 </style>
 
-<section class="hero container">
+<section class="hero container text-center">
   <div class="decor-top-left">
     <img src="{{ asset('img/icon1.png') }}" alt="Dekorasi Atas Kiri">
   </div>
   <div class="decor-bottom-left">
     <img src="{{ asset('img/circle.png') }}" alt="Dekorasi Bawah Kiri">
   </div>
-  <div class="row align-items-center">
-    <div class="col-md-6">
-      <h1>Tingkatkan Pengalamanmu dengan Kursus Pelatihan dan Sertifikasi BNSP</h1>
+  <div class="row align-items-center justify-content-center">
+    <!-- Bagian teks -->
+    <div class="col-md-5 text-md-start text-center">
+      <h1 class="fw-bold">Tingkatkan Pengalamanmu dengan Kursus Pelatihan dan Sertifikasi BNSP</h1>
       <p>Kami menyediakan berbagai macam pelatihan mulai dari pemula hingga mahir dengan materi yang selalu diperbarui dan instruktur yang kompeten di bidangnya.</p>
       <div class="mt-3">
         <a href="#" class="btn-daftar">Daftar</a>
         <a href="#" class="btn-kurikulum">Hubungi Kami</a>
       </div>
     </div>
-    <div class="col-md-6 text-center">
-      <img src="img/img-hero.png" alt="Instruktur" class="img-fluid" style="max-width: 350px; border-radius: 10px;">
+
+    <!-- Bagian gambar -->
+    <div class="col-md-5 text-center">
+      <img src="img/img-hero.png" alt="Instruktur" 
+           class="img-fluid" 
+           style="max-width: 450px; border-radius: 15px;">
     </div>
   </div>
 </section>
