@@ -9,7 +9,7 @@
 /* Responsive Breakpoint */
 @media(min-width: 576px) { .col-6 { flex: 1 1 48%; } }
 @media(min-width: 992px) {
-  .col-4 { flex: 1 1 30%; }
+  .col-4 { flex: 1 1 30bbbb%; }
   .col-6 { flex: 1 1 48%; }
   .col-12 { flex: 1 1 100%; }
 }
@@ -34,7 +34,7 @@
       color: #4B5563;
     }
     .decor-top-left{
-      top:20px;
+      top:40px;
       left:20px;
     }
     .btn-daftar {
@@ -95,32 +95,29 @@
   cursor: pointer;
 }
 
-     .decor-top-left,
+   .decor-top-left,
 .decor-bottom-left {
   position: absolute;
-  left: 0;
-  width: 35px;
-  z-index: 1; /* <-- dinaikkan */
-  transform: translateX(-50%); /* <-- bener-bener ke kiri */
-  pointer-events: none; /* opsional */
+  left: 20px; /* kasih jarak fix dari kiri */
+  width: 50px;
+  z-index: 1;
+  pointer-events: none;
 }
 
-    .decor-top-left {
-      top: 40px;
-      left: 0px;
-    }
+.decor-top-left {
+  top: 40px; /* jarak dari atas */
+}
 
-    .decor-bottom-left {
-      bottom: 80px;
-      left: 0px;
-    }
+.decor-bottom-left {
+  bottom: 40px; /* jarak dari bawah (dibikin sama) */
+}
 
-    .decor-top-left img,
-    .decor-bottom-left img {
-      width: 100%;
-      height: auto;
-      opacity: 1;
-    }
+.decor-top-left img,
+.decor-bottom-left img {
+  width: 100%;
+  height: auto;
+  opacity: 1;
+}
 
     .fitur-list {
   list-style: none;
@@ -290,9 +287,11 @@
 }
 
 .more-button:hover {
-  background-color: #e6ac00;
-  transform: scale(1.05);
-}
+            background: #000;
+            color: #FACC15;
+            transform: translateY(-2px);
+        }
+
 
 @media (max-width: 576px) {
   .card-custom {
@@ -301,29 +300,75 @@
   }
 }
 
+/* Mentor Section */
+.mentor-section {
+  font-family: "Poppins", sans-serif;
+}
+
 .mentor-title {
-  font-size: 24px;
+  font-size: 2rem;
   font-weight: 700;
+  color: #222;
+}
+
+.mentor-title .highlight {
+  color: #7c3aed; /* ungu */
 }
 
 .mentor-description {
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 14px;
-  color: #555;
+  font-size: 1rem;
+  color: #6c757d;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
+/* Mentor Grid */
+.mentor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* Mentor Card */
 .mentor-card {
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+  position: relative;
 }
 
-.mentor-card img {
-  border-radius: 10px 10px 0 0;
+.mentor-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Gambar Mentor (ukuran mirip artikel) */
+.mentor-card img.card-thumb {
   width: 100%;
-  height: auto;
+  height: 140px;   /* sama dengan artikel */
+  object-fit: cover;
+  object-position: top center; /* biar wajah tetap keliatan */
+}
+
+/* Konten */
+.card-content {
+  padding: 1rem;
+  text-align: center;
+}
+
+.card-judul {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+  margin: 0.3rem 0;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin: 0;
 }
 
 .highlight {
@@ -670,11 +715,12 @@
         margin-top: 12px;
       }
     }
+    
 </style>
 
 <section class="hero container text-center">
   <div class="decor-top-left">
-    <img src="{{ asset('img/icon1.png') }}" alt="Dekorasi Atas Kiri">
+    <img src="{{ asset('img/ico.png') }}" alt="Dekorasi Atas Kiri">
   </div>
   <div class="decor-bottom-left">
     <img src="{{ asset('img/circle.png') }}" alt="Dekorasi Bawah Kiri">
@@ -682,7 +728,7 @@
   <div class="row align-items-center justify-content-center">
     <!-- Bagian teks -->
     <div class="col-md-5 text-md-start text-center">
-      <h1 class="fw-bold">Tingkatkan Pengalamanmu dengan Kursus Pelatihan dan Sertifikasi BNSP</h1>
+      <h1 class="fw-bold">Tingkatkan Pengalamanmu Dengan Kursus Pelatihan dan Sertifikasi BNSP</h1>
       <p>Kami menyediakan berbagai macam pelatihan mulai dari pemula hingga mahir dengan materi yang selalu diperbarui dan instruktur yang kompeten di bidangnya.</p>
       <div class="mt-3">
         <a href="#" class="btn-daftar">Daftar</a>
@@ -736,7 +782,7 @@
 </section>
 
 <section class="container-Program">
-  <div class="title">Program <span class="highlight">Campusdigital</span></div>
+  <h2 class="fw-bold">Program <span class="highlight">Campusdigital</span></h2>
   <div class="description">
     Kami menyediakan berbagai program unggulan seperti Kursus pelatihan digital marketing, Pelatihan content creator, Pelatihan design grafis, dan lain sebagainya yang cocok untuk pemula
   </div>
@@ -888,47 +934,44 @@
       Mentor <span class="highlight">Campusdigital</span>
     </h2>
     <p class="mentor-description mb-4 text-muted">
-      praktisi digital marketing, content creator, dan program digital lainnya siap membimbing pelatihan dan sertifikasi BNSP
+      Praktisi digital marketing, content creator, dan program digital lainnya siap membimbing pelatihan dan sertifikasi BNSP
     </p>
 
-   <div class="row justify-content-center">
-  <div class="card-container d-flex flex-wrap justify-content-center">
-    
-    <div class="card">
-      <img src="{{ asset('img/mentor-1.png') }}" alt="Mentor">
-      <div class="card-content text-center">
-        <p class="card-judul mb-1">M. Syarifudin yusuf</p>
-        <p class="card-text text-muted mb-0">Social Media Specialist</p>
+    <div class="mentor-grid">
+      <!-- Mentor 1 -->
+      <div class="mentor-card">
+        <img src="{{ asset('img/mentor-1.png') }}" alt="Mentor" class="card-thumb" />
+        <div class="card-content">
+          <h4 class="card-judul">M. Syarifudin Yusuf</h4>
+          <p class="card-text">Social Media Specialist</p>
+        </div>
       </div>
-    </div>
 
-    <div class="card">
-      <img src="{{ asset('img/mentor-1.png') }}" alt="Mentor">
-      <div class="card-content text-center">
-        <p class="card-judul mb-1">M. Syarifudin yusuf</p>
-        <p class="card-text text-muted mb-0">Social Media Specialist</p>
+      <!-- Mentor 2 -->
+      <div class="mentor-card">
+        <img src="{{ asset('img/mentor-1.png') }}" alt="Mentor" class="card-thumb" />
+        <div class="card-content">
+          <h4 class="card-judul">M. Syarifudin Yusuf</h4>
+          <p class="card-text">Social Media Specialist</p>
+        </div>
       </div>
-    </div>
 
-    <div class="card">
-      <img src="{{ asset('img/mentor-1.png') }}" alt="Mentor">
-      <div class="card-content text-center">
-        <p class="card-judul mb-1">M. Syarifudin yusuf</p>
-        <p class="card-text text-muted mb-0">Social Media Specialist</p>
+      <!-- Mentor 3 -->
+      <div class="mentor-card">
+        <img src="{{ asset('img/mentor-1.png') }}" alt="Mentor" class="card-thumb" />
+        <div class="card-content">
+          <h4 class="card-judul">M. Syarifudin Yusuf</h4>
+          <p class="card-text">Social Media Specialist</p>
+        </div>
       </div>
-    </div>
 
-    <div class="card">
-      <img src="{{ asset('img/mentor-1.png') }}" alt="Mentor">
-      <div class="card-content text-center">
-        <p class="card-judul mb-1">M. Syarifudin yusuf</p>
-        <p class="card-text text-muted mb-0">Social Media Specialist</p>
-      </div>
-    </div>
-
-  </div>
-</div>
-
+      <!-- Mentor 4 -->
+      <div class="mentor-card">
+        <img src="{{ asset('img/mentor-1.png') }}" alt="Mentor" class="card-thumb" />
+        <div class="card-content">
+          <h4 class="card-judul">M. Syarifudin Yusuf</h4>
+          <p class="card-text">Social Media Specialist</p>
+        </div>
       </div>
     </div>
   </div>

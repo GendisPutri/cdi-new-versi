@@ -3,7 +3,7 @@
 @section('title', 'Program Reguler - Campus Digital')
 
 @section('content')
-    <style>
+<style>
 .hero-section {
   position: relative;
   height: 360px;
@@ -22,7 +22,7 @@
   width: 100%;
   height: 90%;
   object-fit: cover;
-  object-position: top; /* Gambar dinaikin */
+  object-position: top;
 }
 
 .hero-bg-wrapper .overlay {
@@ -30,7 +30,7 @@
   top: 0; left: 0;
   width: 100%;
   height: 90%;
-  background: rgba(129, 0, 255, 0.35); /* Ungu semi-transparan */
+  background: rgba(129, 0, 255, 0.35);
 }
 
 .hero-content {
@@ -39,13 +39,13 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Teks di atas */
+  justify-content: flex-start;
   padding: 40px 10%;
   color: white;
 }
 
 .judul-hero {
-  font-size: 3rem; /* diperkecil dari sebelumnya */
+  font-size: 3rem;
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -69,78 +69,82 @@
 }
 
 .btn-hubungi:hover {
-  background-color: #f2f2f2;
-  color: #a86cf5;
+  background-color: #a86cf5;
+  color: #FFFFFF;
+   border: 2px solid #FFFFFF;
 }
 
-  .kursus-section {
-      padding: 10px;
-      background-color: #f7f2fc;
-    }
+body {
+  margin: 0;
+  padding: 0;
+  background: #F7F2FC;
+  min-height: 100vh;
+}
 
-    .kursus-section h2 {
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
+.card-custom {
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
 
-    .kursus-section p {
-      max-width: 700px;
-      color: #555;
-    }
+.placeholder-img {
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(135deg, #f3f3f3, #ffffff, #f3f3f3);
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
 
-    .card-custom {
-      background-color: #fff;
-      border: none;
-      border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      padding: 20px 20px 30px;
-      text-align: left;
-      transition: transform 0.2s;
-    }
+.title-kategori {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
 
-    .card-custom:hover {
-      transform: translateY(-4px);
-    }
+.title-kategori span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+}
 
-    .placeholder-img {
-      width: 100%;
-      height: 120px;
-      border-radius: 15px;
-      background: linear-gradient(135deg, #f3f3f3, #ffffff);
-      margin-bottom: 15px;
-    }
-
-    .badge-regular {
+.badge-kategori {
   font-size: 12px;
-  color: #6c6c6c;
-  background-color: #fff;
-  border: 1px solid #d2d2d2;
-  padding: 4px 12px;
-  border-radius: 6px;
-  display: inline-block;
-  margin: 4px 0 12px 0;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #FEFEFF, #F5EBFF, #FEFEFF);
+  color: #A155E6;
   font-weight: 500;
+  white-space: nowrap;
+  border: 1px solid #CECECE;
 }
 
-    .btn-gradient {
-      background: linear-gradient(to right, #AF76EF, #FFFFFF, #AF76EF);
-      color: #333;
-      border: none;
-      border-radius: 999px;
-      padding: 8px 32px;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
+.btn-pesan {
+  margin-top: auto;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #AF76EF, #FFFFFF, #AF76EF);
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  color: black;
+  width: 100%;
+  transition: 0.3s;
+}
 
-    .btn-gradient:hover,
-    .btn-gradient:focus,
-    .btn-gradient:active {
-      background: linear-gradient(to right, #FFFFFF, #AF76EF, #FFFFFF);
-      color: #AF76EF;
-    }
-
+.btn-pesan:hover {
+  background: linear-gradient(90deg, #FFFFFF, #AF76EF, #FFFFFF);
+  color: #fff;
+}
 </style>
-  <section class="hero-section">
+
+<section class="hero-section">
   <div class="hero-bg-wrapper">
     <img src="{{ asset('img/reguler.png') }}" alt="Banner Pelatihan Reguler">
     <div class="overlay"></div>
@@ -156,163 +160,89 @@
     <a href="#kelas" class="btn-hubungi">Hubungi Kami</a>
   </div>
 </section>
-<!-- SECTION: Kursus Kelas -->
-<section class="kursus-section py-5" style="background-color: #f7f2fc; text-start">
+
+<section class="kursus-section py-5" id="kelas">
   <div class="container text-start">
-    <h2 class="fw-bold mb-2">Kursus Kelas Menjadi Jago Ngonten</h2>
-    <p class="mb-4 text-muted">
-      Pelatihan ini membantu Anda menguasai teknik pembuatan konten menarik agar bisa membangun personal branding dan menjangkau audiens lebih luas secara konsisten.
-    </p>
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
-      
-      <!-- Card -->
+    {{-- Kategori 1 --}}
+    <h2 class="fw-bold mb-2 text-black">Kursus Kelas Menjadi Jago Ngonten</h2>
+    <p class="mb-4 text-black">Belajar bikin konten yang menarik, dari editing sampai teknik storytelling.</p>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mb-5">
+      @php
+        $ngonten = [
+          "Pelatihan Content Creator",
+          "Pelatihan Video Editor",
+          "Pelatihan Graphic Design",
+          "Pelatihan Fotografi",
+          "Pelatihan Multimedia",
+        ];
+      @endphp
+      @foreach ($ngonten as $item)
       <div class="col">
-        <div class="card-custom text-start">
+        <div class="card-custom">
           <div class="placeholder-img"></div>
-          <div class="fw-medium">Pelatihan Graphic Design</div>
-          <span class="badge-regular">Reguler</span>
-          <button class="btn btn-gradient">Pesan</button>
+          <div class="title-kategori">
+            <span>{{ $item }}</span>
+            <span class="badge-kategori">Ngonten</span>
+          </div>
+          <button class="btn-pesan">Pesan</button>
         </div>
       </div>
-
-      <!-- Ulangi card sesuai jumlah -->
-      <div class="col">
-        <div class="card-custom text-start">
-          <div class="placeholder-img"></div>
-          <div class="fw-medium">Pelatihan Content Creator</div>
-          <span class="badge-regular">Reguler</span>
-          <button class="btn btn-gradient">Pesan</button>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card-custom text-start">
-          <div class="placeholder-img"></div>
-          <div class="fw-medium">Pelatihan Multimedia</div>
-          <span class="badge-regular">Reguler</span>
-          <button class="btn btn-gradient">Pesan</button>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card-custom text-start">
-          <div class="placeholder-img"></div>
-          <div class="fw-medium">Pelatihan Video Editor</div>
-          <span class="badge-regular">Reguler</span>
-          <button class="btn btn-gradient">Pesan</button>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card-custom text-start">
-          <div class="placeholder-img"></div>
-          <div class="fw-medium">Pelatihan Fotografi</div>
-          <span class="badge-regular">Reguler</span>
-          <button class="btn btn-gradient">Pesan</button>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card-custom text-start">
-          <div class="placeholder-img"></div>
-          <div class="fw-medium">Pelatihan Teknisi Audio Visual</div>
-          <span class="badge-regular">Reguler</span>
-          <button class="btn btn-gradient">Pesan</button>
-        </div>
-      </div>
+      @endforeach
     </div>
+
+    {{-- Kategori 2 --}}
+    <h2 class="fw-bold mb-2 text-black">Kursus Kelas Tambah Penghasilan dengan Sosmed</h2>
+    <p class="mb-4 text-black">Optimalkan sosial media untuk mendatangkan cuan, cocok buat UMKM maupun personal branding.</p>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mb-5">
+      @php
+        $sosmed = [
+          "Pelatihan Digital Marketing",
+          "Pelatihan Sosial Media Sociate",
+        ];
+      @endphp
+      @foreach ($sosmed as $item)
+      <div class="col">
+        <div class="card-custom">
+          <div class="placeholder-img"></div>
+          <div class="title-kategori">
+            <span>{{ $item }}</span>
+            <span class="badge-kategori">Sosmed</span>
+          </div>
+          <button class="btn-pesan">Pesan</button>
+        </div>
+      </div>
+      @endforeach
+    </div>
+
+    {{-- Kategori 3 --}}
+    <h2 class="fw-bold mb-2 text-black">Kursus Kelas Jago IT</h2>
+    <p class="mb-4 text-black">Bekali dirimu skill IT mulai dari pemrograman, desain web, hingga teknisi komputer.</p>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+      @php
+        $it = [
+          "Pelatihan Web Developer",
+          "Pelatihan Web Design",
+          "Pelatihan Game Developer",
+          "Pelatihan Mobile Programming",
+          "Junior Computer Technician",
+          "Pelatihan Komputer Perkantoran",
+        ];
+      @endphp
+      @foreach ($it as $item)
+      <div class="col">
+        <div class="card-custom">
+          <div class="placeholder-img"></div>
+          <div class="title-kategori">
+            <span>{{ $item }}</span>
+            <span class="badge-kategori">IT</span>
+          </div>
+          <button class="btn-pesan">Pesan</button>
+        </div>
+      </div>
+      @endforeach
+    </div>
+
   </div>
 </section>
-
-<section class="kursus-alt-section py-5" style="background-color: #f7f2fc; text-align: start;">
-  <div class="container text-start">
-    <h2 class="fw-bold mb-2">Kursus Kelas Tambah Penghasilan dengan Sosmed</h2>
-    <p class="mb-4 text-muted">
-      Pelatihan ini dirancang untuk mengajarkan strategi memanfaatkan media sosial agar bisa menjadi sumber penghasilan tambahan secara efektif.
-
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
-      <!-- Card -->
-      <div class="col">
-        <div class="card-custom text-start">
-          <div class="placeholder-img"></div>
-          <div class="fw-medium">Pelatihan Digital Marketing</div>
-          <span class="badge-regular">Reguler</span>
-          <button class="btn btn-gradient">Pesan</button>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card-custom text-start">
-          <div class="placeholder-img"></div>
-          <div class="fw-medium">Pelatihan Sosial Media Sociate</div>
-          <span class="badge-regular">Reguler</span>
-          <button class="btn btn-gradient">Pesan</button>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card-custom text-start">
-          <div class="placeholder-img"></div>
-          <div class="fw-medium">Pelatihan Komputer Perkantoran</div>
-          <span class="badge-regular">Reguler</span>
-          <button class="btn btn-gradient">Pesan</button>
-        </div>
-      </div>
-</section>
-
-<section class="kursus-alt-section py-5" style="background-color: #f7f2fc; text-align: start;">
-  <div class="container text-start">
-    <h2 class="fw-bold mb-2">Kursus Kelas Jago IT</h2>
-    <p class="mb-4 text-muted">
-      Pelatihan ini bertujuan membekali Anda dengan keterampilan IT praktis agar siap menghadapi kebutuhan digital di dunia kerja dan usaha.
-
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
-      <!-- Card -->
-      <div class="col">
-        <div class="card-custom text-start">
-          <div class="placeholder-img"></div>
-          <div class="fw-medium">Pelatihan Web Developer</div>
-          <span class="badge-regular">Reguler</span>
-          <button class="btn btn-gradient">Pesan</button>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card-custom text-start">
-          <div class="placeholder-img"></div>
-          <div class="fw-medium">Pelatihan Web Design</div>
-          <span class="badge-regular">Reguler</span>
-          <button class="btn btn-gradient">Pesan</button>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card-custom text-start">
-          <div class="placeholder-img"></div>
-          <div class="fw-medium">Pelatihan Game Developer</div>
-          <span class="badge-regular">Reguler</span>
-          <button class="btn btn-gradient">Pesan</button>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card-custom text-start">
-          <div class="placeholder-img"></div>
-          <div class="fw-medium">Pelatihan Mobile Progamming</div>
-          <span class="badge-regular">Reguler</span>
-          <button class="btn btn-gradient">Pesan</button>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card-custom text-start">
-          <div class="placeholder-img"></div>
-          <div class="fw-medium">Junior Computer Technician</div>
-          <span class="badge-regular">Reguler</span>
-          <button class="btn btn-gradient">Pesan</button>
-        </div>
-      </div>
-</section>
-
 @endsection

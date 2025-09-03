@@ -3,8 +3,7 @@
 @section('title', 'Program Coorporate - Campus Digital')
 
 @section('content')
-
-    <style>
+<style>
 .hero-section {
   position: relative;
   height: 360px;
@@ -23,7 +22,7 @@
   width: 100%;
   height: 90%;
   object-fit: cover;
-  object-position: top; /* Gambar dinaikin */
+  object-position: top;
 }
 
 .hero-bg-wrapper .overlay {
@@ -31,7 +30,7 @@
   top: 0; left: 0;
   width: 100%;
   height: 90%;
-  background: rgba(129, 0, 255, 0.35); /* Ungu semi-transparan */
+  background: rgba(129, 0, 255, 0.35);
 }
 
 .hero-content {
@@ -40,13 +39,13 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Teks di atas */
+  justify-content: flex-start;
   padding: 40px 10%;
   color: white;
 }
 
 .judul-hero {
-  font-size: 3rem; /* diperkecil dari sebelumnya */
+  font-size: 3rem;
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -70,121 +69,174 @@
 }
 
 .btn-hubungi:hover {
-  background-color: #f2f2f2;
-  color: #a86cf5;
+  background-color: #a86cf5;
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
 }
 
-  .kursus-section {
-      padding: 60px 20px;
-      background-color: #f7f2fc;
-    }
+body {
+  margin: 0;
+  padding: 0;
+  background: #F7F2FC;
+  min-height: 100vh;
+}
 
-    .kursus-section h2 {
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
+.card-custom {
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
 
-    .kursus-section p {
-      max-width: 700px;
-      color: #555;
-    }
+.placeholder-img {
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(135deg, #f3f3f3, #ffffff, #f3f3f3);
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
 
-    .card-custom {
-      background-color: #fff;
-      border: none;
-      border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      padding: 20px 20px 30px;
-      text-align: left;
-      transition: transform 0.2s;
-    }
+.title-kategori {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
 
-    .card-custom:hover {
-      transform: translateY(-4px);
-    }
+.title-kategori span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+}
 
-    .placeholder-img {
-      width: 100%;
-      height: 120px;
-      border-radius: 15px;
-      background: linear-gradient(135deg, #f3f3f3, #ffffff);
-      margin-bottom: 15px;
-    }
-
-    .badge-regular {
+.badge-kategori {
   font-size: 12px;
-  color: #6c6c6c;
-  background-color: #fff;
-  border: 1px solid #d2d2d2;
-  padding: 4px 12px;
-  border-radius: 6px;
-  display: inline-block;
-  margin: 4px 0 12px 0;
+  padding: 4px 14px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #FEFEFF, #F5EBFF, #FEFEFF);
+  color: #000;
   font-weight: 500;
+  white-space: nowrap;
+  border: 1px solid #CECECE; /* border biar kelihatan */
 }
 
-    .btn-gradient {
-      background: linear-gradient(to right, #AF76EF, #FFFFFF, #AF76EF);
-      color: #333;
-      border: none;
-      border-radius: 999px;
-      padding: 8px 32px;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
+.btn-pesan {
+  margin-top: auto;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #AF76EF, #FFFFFF, #AF76EF);
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  color: black;
+  width: 100%;
+  transition: 0.3s;
+}
 
-    .btn-gradient:hover,
-    .btn-gradient:focus,
-    .btn-gradient:active {
-      background: linear-gradient(to right, #FFFFFF, #AF76EF, #FFFFFF);
-      color: #AF76EF;
-    }
-
+.btn-pesan:hover {
+  background: linear-gradient(90deg, #FFFFFF, #AF76EF, #FFFFFF);
+  color: #fff;
+}
 </style>
-  <section class="hero-section">
+
+<section class="hero-section">
   <div class="hero-bg-wrapper">
-    <img src="{{ asset('img/reguler.png') }}" alt="Banner Pelatihan Reguler">
+    <img src="{{ asset('img/coor.png') }}" alt="Banner Pelatihan Coorporate">
     <div class="overlay"></div>
   </div>
 
   <div class="hero-content container">
-    <h1 class="judul-hero">Pelatihan Profesi</h1>
+    <h1 class="judul-hero">Pelatihan Coorporate</h1>
     <p class="deskripsi-hero">
-      Membantu peserta mendapatkan pengakuan resmi kompetensi melalui sertifikasi BNSP yang diakui secara nasional.
+      Program khusus untuk pelatihan karyawan serta instansi, agar dapat meningkatkan kompetensi <br>
+      sesuai kebutuhan dunia kerja masa kini.
     </p>
     <a href="#kelas" class="btn-hubungi">Hubungi Kami</a>
   </div>
 </section>
-<!-- SECTION: Kursus Kelas -->
-<section class="kursus-section py-5" style="background-color: #f7f2fc; text-start">
+
+<section class="kursus-section py-5" id="kelas">
   <div class="container text-start">
-    <h2 class="fw-bold mb-2">Kursus Peningkatan Profesi</h2>
-    <p class="mb-4 text-muted">
-      Dilengkapi sertifikasi dan materi terbaru, kursus ini dirancang untuk kamu yang siap memimpin tim, naik jabatan, atau buka peluang karier baru
-    </p>
 
+    {{-- Kategori 1: Pelatihan UMKM --}}
+    <h2 class="fw-bold mb-2 text-black">Kursus Pelatihan UMKM</h2>
+    <p class="mb-4 text-black">Meningkatkan kemampuan pelaku UMKM agar dapat naik kelas dengan skill digital.</p>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mb-5">
+      @php
+        $umkm = [
+          "Kembangkan Digital UMKM",
+          "UMKM Go Digital",
+        ];
+      @endphp
+      @foreach ($umkm as $item)
+      <div class="col">
+        <div class="card-custom">
+          <div class="placeholder-img"></div>
+          <div class="title-kategori">
+            <span>{{ $item }}</span>
+            <span class="badge-kategori">UMKM</span>
+          </div>
+          <button class="btn-pesan">Pesan</button>
+        </div>
+      </div>
+      @endforeach
+    </div>
+
+    {{-- Kategori 2: Dunia Industri --}}
+    <h2 class="fw-bold mb-2 text-black">Kursus Praktek Dunia Industri</h2>
+    <p class="mb-4 text-black">Materi disiapkan agar siswa dan mahasiswa siap menghadapi praktek kerja nyata di industri.</p>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mb-5">
+      @php
+        $industri = [
+          "Proyek CNC",
+          "Pelatihan Otomotif",
+          "Pelatihan Welding",
+          "Manufaktur Training",
+          "Teknologi Digital",
+        ];
+      @endphp
+      @foreach ($industri as $item)
+      <div class="col">
+        <div class="card-custom">
+          <div class="placeholder-img"></div>
+          <div class="title-kategori">
+            <span>{{ $item }}</span>
+            <span class="badge-kategori">Industri</span>
+          </div>
+          <button class="btn-pesan">Pesan</button>
+        </div>
+      </div>
+      @endforeach
+    </div>
+
+    {{-- Kategori 3: Beasiswa --}}
+    <h2 class="fw-bold mb-2 text-black">Beasiswa untuk Menambah Skillmu</h2>
+    <p class="mb-4 text-black">Dapatkan kesempatan pelatihan gratis untuk mengembangkan skill baru yang relevan dengan kebutuhan kerja.</p>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
-      
-      <!-- Card -->
+      @php
+        $beasiswa = [
+          "Beasiswa",
+        ];
+      @endphp
+      @foreach ($beasiswa as $item)
       <div class="col">
-        <div class="card-custom text-start">
+        <div class="card-custom">
           <div class="placeholder-img"></div>
-          <div class="fw-medium">Digital Techperneur</div>
-          <span class="badge-regular">Reguler</span>
-          <button class="btn btn-gradient">Pesan</button>
+          <div class="title-kategori">
+            <span>{{ $item }}</span>
+            <span class="badge-kategori">Beasiswa</span>
+          </div>
+          <button class="btn-pesan">Pesan</button>
         </div>
       </div>
+      @endforeach
+    </div>
 
-      <!-- Ulangi card sesuai jumlah -->
-      <div class="col">
-        <div class="card-custom text-start">
-          <div class="placeholder-img"></div>
-          <div class="fw-medium">Digital Marketer</div>
-          <span class="badge-regular">Reguler</span>
-          <button class="btn btn-gradient">Pesan</button>
-        </div>
-      </div>
-
-      
+  </div>
 </section>
 @endsection
