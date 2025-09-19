@@ -109,7 +109,7 @@
 }
 
 .decor-bottom-left {
-  bottom: 40px; /* jarak dari bawah (dibikin sama) */
+  bottom: 60px; /* jarak dari bawah (dibikin sama) */
 }
 
 .decor-top-left img,
@@ -211,42 +211,51 @@
   background-color: #AF76EF;
 }
 
-.card-wrapper {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-top: 20px;
+/* Grid */
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 2fr));
+}
+.program-content {
+  gap: 24px; /* bootstrap 5 udah support gap */
 }
 
- .card-container {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
 
-    .card {
-      background: white;
-      border-radius: 20px;
-      width: 250px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      overflow: hidden;
-    }
+/* Card Program */
+.card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px; /* lengkung lebih halus */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+   width: 220px;   /* sama kayak mentor-card */
+  height: 330px;  /* bikin semua tinggi sejajar */
+}
 
-    .card img {
-      width: 100%;
-      height: auto;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
-    }
+.card:hover {
+  transform: translateY(-4px);
+}
 
-    .card-content {
-      padding: 15px;
-      text-align: left;
-    }
+.card .card-thumb {
+  width: 100%;       /* gambar isi full lebar card */
+  height: 200px;     /* atur tinggi sesuai selera */
+  object-fit: cover; /* biar gambar gak gepeng */
+  border-radius: 12px; /* rounded atas aja */
+  display: block;
+}
+
+/* Konten card */
+.card-content {
+  padding: 14px 16px;
+  flex: 1;
+  text-align: left; /* rata kiri */
+}
 
     .card-title {
-      font-size: 14px;
+      font-size: 12px;
       margin: 0;
       display: flex;
       align-items: center;
@@ -255,9 +264,11 @@
 
     .badge {
       font-size: 10px;
-      background-color: #f2f2f2;
+      background: linear-gradient(90deg, #FEFEFF, #F5EBFF, #FEFEFF);
+      color: #000;
       padding: 3px 8px;
-      border-radius: 999px;
+      border: 1px solid #CECECE;
+      border-radius: 10px; 
     }
 
     .pesan-btn {
@@ -347,11 +358,10 @@
 /* Gambar Mentor (ukuran mirip artikel) */
 .mentor-card img.card-thumb {
   width: 100%;
-  height: 140px;   /* sama dengan artikel */
+  height: 250px;   /* sama dengan artikel */
   object-fit: cover;
   object-position: top center; /* biar wajah tetap keliatan */
 }
-
 /* Konten */
 .card-content {
   padding: 1rem;
@@ -412,10 +422,13 @@
   text-align: center;
 }
 
-@media (min-width: 768px) {
-  .text-content {
+@media (min-width: 400px){
+    .text-content {
     text-align: left;
-  }
+  }    
+  .mentor-hp{
+  display: none;
+}
 }
 
 .text-content h2 {
@@ -614,6 +627,12 @@
       text-decoration: none;
     }
 
+    .btn-lihat:hover {
+            background: #000;
+            color: #FACC15;
+            transform: translateY(-2px);
+        }
+
     .artikel-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -677,18 +696,19 @@
     }
 
     .footer-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      background-color: #f5f5f5;
-      padding: 6px 10px;
-      border-radius: 20px;
-    }
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #fff; /* ganti jadi putih */
+  padding: 8px;
+  border-radius: 20px;
+  border: 1px solid #ddd; /* kasih border abu */
+}
 
     .icon-avatar {
-      width: 24px;
-      height: 24px;
-      background-color: #ddd;
+      width: 10px;
+      height: 10px;
+      background-color: #ffffff;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -698,13 +718,13 @@
     }
 
     .contributor {
-      font-size: 13px;
+      font-size: 10px;
       color: #0d6efd;
       font-weight: 500;
     }
 
     .date {
-      font-size: 13px;
+      font-size: 10px;
       color: #444;
     }
 
@@ -715,6 +735,332 @@
         margin-top: 12px;
       }
     }
+@media (max-width: 991px) {
+  .decor-bottom-left,
+      .decor-top-left {
+        display: none;
+      }
+      .hero-image {
+  margin-top: 30px !important;
+  max-width: 50px;   /* batasi ukuran */
+  border-radius: 15px; /* sudut melengkung */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* kasih bayangan biar elegan */
+  transition: transform 0.3s ease; /* animasi halus */
+}
+
+.hero-image:hover {
+  transform: scale(1.05); /* zoom sedikit pas hover */
+}
+/* Reset default margin body */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Section styling */
+.section-sejarah {
+  background: linear-gradient(to right, #EAE7E7, #FFFFFF, #EAE7E7);
+  padding: 60px 20px;   /* atas-bawah 60px, kiri-kanan 20px */
+  border-radius: 30px;
+  max-width: 900px;
+  margin: 40px auto;    /* kasih jarak rata tengah */
+  box-sizing: border-box;
+}
+
+/* Biar heading & paragraf nggak bikin nambah jarak berlebihan */
+.section-sejarah h2,
+.section-sejarah p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+  .section-sejarah {
+    padding: 40px 15px;   /* biar lebih rapat di HP */
+    border-radius: 20px;
+    margin: 20px 10px;    /* biar nggak nempel layar */
+  }
+
+}
+    @media (max-width: 400px) {
+      .decor-bottom-left,
+      .decor-top-left {
+        display: none;
+      }
+    
+    .hero-text h1 {
+  font-size: 24px; /* kecilin judul */
+  line-height: 1.4; /* biar lebih rapih */
+}
+
+.hero-text p {
+  font-size: 14px; /* kecilin paragraf */
+  color: #555;     /* opsional: kasih warna abu biar lebih enak dibaca */
+  line-height: 1.6;
+}
+
+.hero-image {
+  margin-top: 30px !important;
+  max-width: 50px;   /* batasi ukuran */
+  border-radius: 15px; /* sudut melengkung */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* kasih bayangan biar elegan */
+  transition: transform 0.3s ease; /* animasi halus */
+}
+
+.hero-image:hover {
+  transform: scale(1.05); /* zoom sedikit pas hover */
+}
+.btn-kurikulum {
+      background: #fff;
+      color: #6D28D9;
+      font-style: ;
+      font-weight: 300;
+      border: 2px solid #6D28D9;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+      .btn-kurikulum:hover {
+            background: #6D28D9;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column; /* susun vertikal */
+  align-items: center;    /* biar rata tengah */
+  text-align: center;     /* teks rata tengah */
+  gap: 20px;              /* jarak antara gambar dan teks */
+}
+
+.main-image {
+  max-width: 300px;
+  border-radius: 15px;
+}
+.mitra .box {
+  background: transparent !important; 
+  border-radius: 0 !important;
+  box-shadow: none !important; /* kalau ada bayangan */
+  padding: 0 !important;       /* opsional */
+}
+
+.mitra .box img {
+  max-width: 100px;       /* atur ukuran logo */
+  width: 70%;
+  height: auto;
+  object-fit: contain;    /* biar nggak ketarik aneh */
+}
+
+.pesan-btn {
+  display: flex;                  /* aktifkan flexbox */
+  align-items: center;            /* vertical center */
+  justify-content: center;        /* horizontal center */
+  width:80%;
+  margin: 10px auto;
+  padding: 10px 0;
+  background: linear-gradient(to right, rgb(194, 140, 255), rgb(255, 255, 255), rgb(194, 140, 255));
+  border: none;
+  border-radius: 999px;
+  font-weight: bold;
+  cursor: pointer;
+  height: 25px;                /* tinggi tetap */
+  line-height: normal;            /* reset line-height */
+}
+
+.mentor-section{
+  display: none;
+}
+/* Mentor Card */
+.mentor-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+  position: relative;
+  width: 200px;
+}
+
+/* Mentor Card biar rata tengah */
+.mentor-slider {
+  display: flex;
+  justify-content: center;
+}
+
+.mentor-card {
+  margin: 0 auto; /* posisikan card ke tengah */
+  max-width: 260px; /* biar gak terlalu melebar */
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+/* Arrow custom */
+.swiper-button-prev,
+.swiper-button-next {
+  color: #AF76EF !important; /* paksa override */
+  font-weight: bold;
+  size: 30px;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 10px; /* biar lebih kecil & rapi */
+}
+
+/* Pagination (titik) */
+.swiper-pagination {
+  margin-top: 12px; /* kasih jarak dari card */
+  position: relative; /* biar tetap di bawah */
+}
+
+/* Bullet pagination */
+/* Posisi pagination */
+.swiper-pagination {
+  position: relative !important; /* biar ikut flow, gak nempel default */
+  margin-top: 12px;             /* jarak antara card & bullet */
+  text-align: center;           /* biar tetap di tengah */
+}
+
+.mentor-card img.card-thumb{
+  height: 180px;
+}
+/* Bullet aktif */
+.swiper-pagination-bullet-active {
+  background: #AF76EF !important; /* ungu */
+}
+
+.program-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+}
+
+.program-grid .card {
+  flex: 0 0 calc(50% - 20px); /* 2 kolom */
+}
+
+.card-content {
+  padding: 14px 16px;
+  flex: 1;
+  text-align: center; /* semua isi rata tengah */
+  display: flex;
+  flex-direction: column; /* susun vertikal */
+  gap: 4px; /* jarak antar elemen */
+}
+
+.card-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* biar ke kiri, atau center kalau mau tengah */
+  gap: 4px; /* jarak teks & badge */
+}
+
+.pesan-btn {
+  display: flex;                  /* aktifkan flexbox */
+  align-items: center;            /* vertical center */
+  justify-content: center;        /* horizontal center */
+  width:80%;
+  margin: 10px auto;
+  padding: 10px;
+  background: linear-gradient(to right, rgb(194, 140, 255), rgb(255, 255, 255), rgb(194, 140, 255));
+  border: none;
+  border-radius: 999px;
+  font-weight: bold;
+  cursor: pointer;
+  height: 25px;                /* tinggi tetap */
+  line-height: normal;            /* reset line-height */
+}
+  .row .tombol-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    margin-top: 0;
+     z-index: 2;
+     position: relative;
+  }
+
+  .hero-img{
+    display: flex;
+    justify-content: flex-end; /* geser gambar ke kanan */
+    align-items: flex-start;   /* naik sejajar tombol */
+    margin-top: -90px;
+     z-index: 1;
+     position: relative;
+  }
+
+  .hero-img img {
+    max-width: 70%;
+    height: auto;
+  }
+  .artikel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px;
+}
+.artikel-footer {
+  display: flex;
+  flex-direction: column; /* bikin atas bawah */
+  align-items: flex-start; /* biar rata kiri */
+  gap: 6px; /* jarak antar baris */
+  margin-top: auto; /* biar nempel ke bawah card */
+}
+
+.footer-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #f5f5f5;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.icon-avatar {
+  width: 20px;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #555;
+}
+
+.contributor {
+  font-size: 10px;
+  color: #0d6efd;
+  font-weight: 500;
+}
+
+.date {
+  font-size: 10px;
+  color: #666;
+  padding: 4px 12px;
+  background: #f5f5f5;
+  border-radius: 20px;
+}
+
+.artikel-content {
+      padding: 16px;
+    }
+
+    .artikel-content h4 {
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .artikel-content p {
+      font-size: 10px;
+      color: #666;
+      margin-bottom: 12px;
+    }
+}
     
 </style>
 
@@ -728,19 +1074,21 @@
   <div class="row align-items-center justify-content-center">
     <!-- Bagian teks -->
     <div class="col-md-5 text-md-start text-center">
+    <div class="hero-text">
       <h1 class="fw-bold">Tingkatkan Pengalamanmu Dengan Kursus Pelatihan dan Sertifikasi BNSP</h1>
       <p>Kami menyediakan berbagai macam pelatihan mulai dari pemula hingga mahir dengan materi yang selalu diperbarui dan instruktur yang kompeten di bidangnya.</p>
-      <div class="mt-3">
+      </div>
+      <div class="mt-3 tombol-wrapper">
         <a href="#" class="btn-daftar">Daftar</a>
         <a href="#" class="btn-kurikulum">Hubungi Kami</a>
       </div>
     </div>
-
     <!-- Bagian gambar -->
     <div class="col-md-5 text-center">
-      <img src="img/img-hero.png" alt="Instruktur" 
-           class="img-fluid" 
-           style="max-width: 450px; border-radius: 15px;">
+    <div class="hero-img">
+    <img src="img/img-hero.png" alt="Instruktur" 
+           class="img-fluid">
+    </div>
     </div>
   </div>
 </section>
@@ -794,94 +1142,96 @@
     <a href="#" data-target="sertifikasi" onclick="setActiveLink(this, event)">Sertifikasi</a>
     <a href="#" data-target="magang" onclick="setActiveLink(this, event)">Magang</a>
   </div>
-
+<div class="container"></div>
   <div class="program-wrapper">
+  <div class="program-grid">
     <div class="row justify-content-center program-content content-reguler">
-      <div class="card-container d-flex flex-wrap justify-content-center">
         <div class="card">
-          <img src="{{asset('img/reguler-1.png')}}" alt="Digital Marketing">
+          <img src="{{asset('img/reguler-1.png')}}" alt="Digital Marketing" class="card-thumb">
           <div class="card-content">
-            <p class="card-title">Pelatihan Digital Marketing <span class="badge">Reguler</span></p>
+            <p class="card-title text-center text-md-start">Pelatihan Digital Marketing <span class="badge">Reguler</span></p>
           </div>
           <button class="pesan-btn">Pesan</button>
         </div>
 
         <div class="card">
-          <img src="{{asset('img/reguler-2.png')}}" alt="Content Creator">
+          <img src="{{asset('img/reguler-2.png')}}" alt="Content Creator" class="card-thumb">
           <div class="card-content">
-            <p class="card-title">Pelatihan Content Creator <span class="badge">Reguler</span></p>
+            <p class="card-title text-center text-md-start">Pelatihan Content Creator <span class="badge">Reguler</span></p>
           </div>
           <button class="pesan-btn">Pesan</button>
         </div>
 
         <div class="card">
-          <img src="{{asset('img/reguler-3.png')}}" alt="Graphic Designer">
+          <img src="{{asset('img/reguler-3.png')}}" alt="Graphic Designer" class="card-thumb">
           <div class="card-content">
-            <p class="card-title">Pelatihan Graphic Designer <span class="badge">Reguler</span></p>
+            <p class="card-title text-center text-md-start">Pelatihan Graphic Designer <span class="badge">Reguler</span></p>
           </div>
           <button class="pesan-btn">Pesan</button>
         </div>
 
         <div class="card">
-          <img src="{{asset('img/reguler-4.png')}}" alt="Operator Komputer Kantor">
+          <img src="{{asset('img/reguler-4.png')}}" alt="Operator Komputer Kantor" class="card-thumb">
           <div class="card-content">
-            <p class="card-title">Pelatihan Operator Komputer <span class="badge">Reguler</span></p>
+            <p class="card-title text-center text-md-start">Pelatihan Operator Komputer <span class="badge">Reguler</span></p>
           </div>
           <button class="pesan-btn">Pesan</button>
         </div>
       </div>
     </div>
+  </div>
 
+ <div class="program-grid">
     <div class="row justify-content-center program-content content-coorporate d-none">
-      <div class="card-container d-flex flex-wrap justify-content-center">
         <div class="card">
-          <img src="{{asset('img/reguler-4.png')}}" alt="Operator Komputer Kantor">
+          <img src="{{asset('img/reguler-4.png')}}" alt="Operator Komputer Kantor" class="card-thumb">
           <div class="card-content">
-            <p class="card-title">Pelatihan Operator Komputer <span class="badge">Coorporate</span></p>
+            <p class="card-title text-center text-md-start">Pelatihan Operator Komputer <span class="badge">Coorporate</span></p>
           </div>
           <button class="pesan-btn">Pesan</button>
         </div>
       </div>
     </div>
 
+    <div class="program-grid">
     <div class="row justify-content-center program-content content-profesi d-none">
-      <div class="card-container d-flex flex-wrap justify-content-center">
         <div class="card">
-          <img src="{{asset('img/reguler-3.png')}}" alt="Graphic Designer">
+          <img src="{{asset('img/reguler-3.png')}}" alt="Graphic Designer" class="card-thumb">
           <div class="card-content">
-            <p class="card-title">Pelatihan Graphic Designer <span class="badge">Profesi</span></p>
+            <p class="card-title text-center text-md-start">Pelatihan Graphic Designer <span class="badge">Profesi</span></p>
           </div>
           <button class="pesan-btn">Pesan</button>
         </div>
       </div>
     </div>
 
+    <div class="program-grid">
     <div class="row justify-content-center program-content content-sertifikasi d-none">
-      <div class="card-container d-flex flex-wrap justify-content-center">
         <div class="card">
-          <img src="{{asset('img/reguler-2.png')}}" alt="Content Creator">
+          <img src="{{asset('img/reguler-2.png')}}" alt="Content Creator" class="card-thumb">
           <div class="card-content">
-            <p class="card-title">Pelatihan Content Creator <span class="badge">Sertifikasi</span></p>
+            <p class="card-title text-center text-md-start">Pelatihan Content Creator <span class="badge">Sertifikasi</span></p>
           </div>
           <button class="pesan-btn">Pesan</button>
         </div>
       </div>
     </div>
 
+    <div class="program-grid">
     <div class="row justify-content-center program-content content-magang d-none">
-      <div class="card-container d-flex flex-wrap justify-content-center">
         <div class="card">
-          <img src="{{asset('img/reguler-2.png')}}" alt="Content Creator">
+          <img src="{{asset('img/reguler-2.png')}}" alt="Content Creator" class="card-thumb">
           <div class="card-content">
-            <p class="card-title">Pelatihan Content Creator <span class="badge">Magang</span></p>
+            <p class="card-title text-center text-md-start">Pelatihan Content Creator <span class="badge">Magang</span></p>
           </div>
           <button class="pesan-btn">Pesan</button>
         </div>
 
         <div class="card">
-          <img src="{{asset('img/reguler-3.png')}}" alt="Graphic Designer">
+          <img src="{{asset('img/reguler-3.png')}}" alt="Graphic Designer" class="card-thumb">
           <div class="card-content">
-            <p class="card-title">Pelatihan Graphic Designer <span class="badge">Magang</span></p>
+            <p class="card-title text-center text-md-start">Pelatihan Graphic Designer 
+            <span class="badge">Magang</span></p>
           </div>
           <button class="pesan-btn">Pesan</button>
         </div>
@@ -976,6 +1326,97 @@
     </div>
   </div>
 </section>
+
+<section class="mentor-hp text-center py-5" style="background: linear-gradient(to right, #f8f5ff, #ffffff);">
+  <div class="container">
+    <h2 class="mentor-title mb-2 fw-bold">
+      Mentor <span class="highlight">Campusdigital</span>
+    </h2>
+    <p class="mentor-description mb-4 text-muted">
+      Praktisi digital marketing, content creator, dan program digital lainnya siap membimbing pelatihan dan sertifikasi BNSP
+    </p>
+
+    <!-- Slider Wrapper -->
+    <div class="swiper mentor-slider mentor-hp">
+      <div class="swiper-wrapper">
+        <!-- Mentor 1 -->
+        <div class="swiper-slide">
+          <div class="mentor-card">
+            <img src="{{ asset('img/mentor-1.png') }}" alt="Mentor" class="card-thumb" />
+            <div class="card-content">
+              <h4 class="card-judul">M. Syarifudin Yusuf</h4>
+              <p class="card-text">Social Media Specialist</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mentor 2 -->
+        <div class="swiper-slide">
+          <div class="mentor-card">
+            <img src="{{ asset('img/mentor-1.png') }}" alt="Mentor" class="card-thumb" />
+            <div class="card-content">
+              <h4 class="card-judul">M. Syarifudin Yusuf</h4>
+              <p class="card-text">Social Media Specialist</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mentor 3 -->
+        <div class="swiper-slide">
+          <div class="mentor-card">
+            <img src="{{ asset('img/mentor-1.png') }}" alt="Mentor" class="card-thumb" />
+            <div class="card-content">
+              <h4 class="card-judul">M. Syarifudin Yusuf</h4>
+              <p class="card-text">Social Media Specialist</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mentor 4 -->
+        <div class="swiper-slide">
+          <div class="mentor-card">
+            <img src="{{ asset('img/mentor-1.png') }}" alt="Mentor" class="card-thumb" />
+            <div class="card-content">
+              <h4 class="card-judul">M. Syarifudin Yusuf</h4>
+              <p class="card-text">Social Media Specialist</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tombol Navigasi -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- Pagination Bullets -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+<!-- SwiperJS CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<script>
+  var swiper = new Swiper(".mentor-slider", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      768: { slidesPerView: 2 }, // Tablet
+      1024: { slidesPerView: 3 }, // Laptop
+    }
+  });
+</script>
+
 
 <section class="mitra-container text-center py-5">
   <div class="container">
@@ -1134,7 +1575,8 @@
 
 
 <section class="custom-section">
-  <div class="content-wrapper">
+<div class="container">
+<div class="content-wrapper">
     <!-- Gambar Utama -->
     <div class="image-container">
       <img src="{{ asset('img/dua.png')}}" alt="Admin membantu" class="main-image" />
@@ -1147,10 +1589,13 @@
       <a href="#hubungi-kami" class="cta-button">Hubungi Kami</a>
     </div>
   </div>
+</div>
+  
 </section>
 
  <section class="artikel-section">
-    <div class="artikel-header">
+ <div class="container">
+ <div class="artikel-header">
       <h2><strong>Artikel <span class="highlight">Campusdigital</span></strong></h2>
       <p>
         Temukan informasi terbaru seputar kursus pelatihan dan sertifikasi, tips & wawasan praktis seputar digital marketing, content creator, desain grafis, dan berita di dunia digital lainnya.
@@ -1242,6 +1687,8 @@
         </div>
       </div>
     </div>
+ </div>
+    
   </section>
 
 @endsection

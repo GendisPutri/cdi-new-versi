@@ -74,7 +74,6 @@
   border: 2px solid #FFFFFF;
 }
 
-
     .section-sejarah {
       background-color: #f9f5ff;
       padding: 40px 20px 20px;
@@ -89,7 +88,7 @@
   padding: 0 20px; /* bikin tetap responsif */
 }
 
-    .section-sejarah .container {
+    .section-sejarah .full-container {
   background: linear-gradient(to right, #EAE7E7, #FFFFFF, #EAE7E7);
   padding: 40px;
   border-radius: 50px;
@@ -110,7 +109,7 @@
     }
 
     .section-sejarah p {
-      font-size: 1rem;
+      font-size: 0.9rem;
       line-height: 1.8;
       color: #333;
       margin-bottom: 16px;
@@ -379,6 +378,45 @@
   .card-container {
     grid-template-columns: 1fr;
   }
+  .section-sejarah .full-container {
+  background: linear-gradient(to right, #EAE7E7, #FFFFFF, #EAE7E7);
+  padding: 12px;
+  border-radius: 20px; /* 🔽 kecilin biar ga terlalu melengkung */
+  max-width: 2000px;    /* 🔽 kasih batas biar teks ga kepanjangan */
+  margin: 0 auto;      /* ✅ tetap center */
+  text-align: justify; /* ✅ rata kanan kiri */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+  .hero-section {
+    height: 80%; /* jangan dipaksa tinggi */
+      margin-bottom: 50px;
+      
+  }
+
+  .hero-section img {
+    height: 100%; /* biar cover penuh */
+    width: 100%;
+     object-fit: cover;
+  }
+
+  .hero-content {
+    padding: 10px;
+    text-align: left; /* teks rata tengah di HP */
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem; /* lebih kecil di HP */
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .btn-hubungi {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
 }
   </style>
 </head>
@@ -403,7 +441,7 @@
   <!-- SEJARAH SECTION -->
   <section class="section-sejarah">
   <div class="wrapper">
-  <div class="container">
+  <div class="full-container">
       <h2>Sejarah <span>Campusdigital</span></h2>
       <p>
         Era Digital memberi pengaruh terhadap perkembangan teknologi yang sangat cepat. Perkembangan teknologi mendorong setiap pribadi untuk selalu siap berubah dan bertumbuh. Persaingan dunia usaha dan dunia industri di era digital juga semakin ketat. Hadirnya persaingan yang ketat di dunia usaha dan industri menuntut dukungan sumber daya manusia yang profesional dan kompeten. Kebutuhan akan SDM yang profesional dan kompeten melahirkan Campus Digital untuk menyajikan program pendidikan dan pelatihan dalam rangka peningkatan kompetensi sumber daya manusia yang unggul.

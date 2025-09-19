@@ -142,6 +142,44 @@ body {
   background: linear-gradient(90deg, #FFFFFF, #AF76EF, #FFFFFF);
   color: #fff;
 }
+@media (max-width: 480px) {
+.judul-hero {
+  font-size: 1.9rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.deskripsi-hero {
+  margin-bottom: 10px;
+}
+.hero-section {
+  position: relative;
+  height: 360px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: -100px;
+}
+.kursus-section {
+  margin-top: -60px;
+}
+.title-kategori {
+  display: flex;
+  flex-direction: column; /* biar atas bawah */
+  align-items: center; /* biar rata kiri */
+  margin-bottom: 12px;
+}
+
+.badge-kategori {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #FEFEFF, #F5EBFF, #FEFEFF);
+  color: #A155E6;
+  font-weight: 500;
+  white-space: nowrap;
+  border: 1px solid #CECECE;
+  margin-top: 4px; /* kasih jarak dikit dari judul */
+}
+}
 </style>
 
 <section class="hero-section">
@@ -167,7 +205,7 @@ body {
     {{-- Kategori 1 --}}
     <h2 class="fw-bold mb-2 text-black">Kursus Kelas Menjadi Jago Ngonten</h2>
     <p class="mb-4 text-black">Belajar bikin konten yang menarik, dari editing sampai teknik storytelling.</p>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mb-5">
+    <div class="row row-cols-2 row-cols-md-4 g-4 mb-5">
       @php
         $ngonten = [
           "Pelatihan Content Creator",

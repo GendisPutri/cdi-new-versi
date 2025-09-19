@@ -17,5 +17,10 @@ class ArtikelController extends Controller
 
     return view('artikel.detail', compact('artikel')); 
 }
+public function detail()
+{
+    return view('artikel.detail');
+}
+
 }
 ?>

@@ -37,6 +37,8 @@ Route::get('/afiliasi', [AfiliasiController::class, 'index'])->name('afiliasi');
 Route::get('/artikel', [ArtikelController::class, 'index'])->name('artikel');
 Route::get('/artikel/{slug}', [ArtikelController::class, 'show'])->name('artikel.show');
 
+Route::get('/detail-artikel', [ArtikelController::class, 'detail'])->name('artikel.detail');
+
 Route::get('/hubungi-kami', [KontakController::class, 'index'])->name('hubungi-kami');
 Route::post('/hubungi-kami', [KontakController::class, 'kirim'])->name('hubungi-kami.kirim');
 

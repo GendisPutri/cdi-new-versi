@@ -141,6 +141,48 @@ body {
   background: linear-gradient(90deg, #FFFFFF, #AF76EF, #FFFFFF);
   color: #fff;
 }
+@media (max-width: 480px) {
+.judul-hero {
+  font-size: 1.9rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: -10px;
+}
+.deskripsi-hero {
+  font-size: 0.85rem;
+  line-height: 1.2;
+  max-width: 700px;
+  margin-bottom: 10px;
+}
+.hero-section {
+  position: relative;
+  height: 360px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: -100px;
+}
+.kursus-section {
+  margin-top: -60px;
+}
+.title-kategori {
+  display: flex;
+  flex-direction: column; /* biar atas bawah */
+  align-items: center; /* biar rata kiri */
+  margin-bottom: 12px;
+}
+
+.badge-kategori {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #FEFEFF, #F5EBFF, #FEFEFF);
+  color: #A155E6;
+  font-weight: 500;
+  white-space: nowrap;
+  border: 1px solid #CECECE;
+  margin-top: 4px; /* kasih jarak dikit dari judul */
+}
+}
 </style>
 <section class="hero-section">
   <div class="hero-bg-wrapper">
@@ -167,7 +209,7 @@ body {
       peserta berhak atas sertifikat pelatihan dan laporan kegiatan.
     </p>
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+    <div class="row row-cols-2 row-cols-md-4 g-4">
       @php
         $kursus = [
           ["title" => "Pengembangan Administrasi dan Arsip", "kategori" => "Magang"],

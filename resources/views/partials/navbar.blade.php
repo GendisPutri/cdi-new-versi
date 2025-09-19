@@ -25,7 +25,7 @@
       margin-left: 40px;
     }
 
-    nav {
+    .nav-container {
       display: flex;
       align-items: center;
       gap: 24px;
@@ -36,7 +36,7 @@
       color: #000 !important;
       font-weight: 600;
       text-transform: uppercase;
-      font-size: 14px;
+      font-size: 12px;
       text-decoration: none;
       transition: all 0.3s ease;
     }
@@ -138,19 +138,69 @@
         align-items: flex-start;
       }
 
-      nav {
+      .nav-container {
         flex-wrap: wrap;
         gap: 10px;
         margin-top: 10px;
       }
     }
+
+/* Default Desktop */
+.menu-toggle {
+  display: none; /* Desktop gak keliatan */
+}
+
+/* Mobile & Tablet */
+@media (max-width: 991px) {
+  .menu-toggle {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1001;
+    gap: 30px;
+  }
+
+  .logo{
+    margin-left: 0 auto;
+  }
+
+  .nav-container {
+    position: fixed;
+    top: 8.3%;
+    left: -100%;
+    width: 80%;
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 15px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .nav-container.show {
+    left: 0;
+  }
+
+  .nav-link,
+  .dropdown-toggle {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+
     </style>
     <header>
      <div class="container d-flex align-items-center justify-content-between">
+      <div class="menu-toggle" id="menuToggle">☰</div>
     <div class="logo">
       <img src="{{asset ('img/logo 1.png')}}" alt="Campus Digital">
     </div>
-    <nav>
+    <nav class="nav-container">
       <a class="nav-link" href="/">Beranda</a>
       <a class="nav-link" href="/tentang-kami">Tentang Kami</a>
       <a class="nav-link" href="#">Galeri</a>
@@ -212,6 +262,13 @@
         parentDropdown.classList.remove("show");
       }
     });
+  });
+
+    const menuToggle = document.getElementById("menuToggle");
+  const navContainer = document.querySelector(".nav-container");
+
+  menuToggle.addEventListener("click", () => {
+    navContainer.classList.toggle("show");
   });
 </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
