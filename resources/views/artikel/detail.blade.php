@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Beranda - Campus Digital')
+@section('title', 'Detail Artikel - Campus Digital')
 
 @section('content')
 
@@ -317,8 +317,8 @@ line-height: normal;
 
 .card-image .badge {
   position: absolute;
-  top: 10px;
-  left: 70px;
+  top: 5px;
+  left: 100px;
   background: #FFFFFF;
   color: #000000B2;
   font-size: 12px;
@@ -334,24 +334,28 @@ line-height: normal;
 }
 
 .kategori-tags {
-  display: flex;
-  flex-wrap: wrap;   /* biar bisa turun kalau kepanjangan */
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(5, auto); /* 5 per baris */
+  gap: 5px;
+  align-items: center;
 }
 
-.kategori-tags .tag {
-  display: inline-flex !important;   /* override CSS lain */
+.kategori-tags span {
   background: #AF76EF;
   color: #fff;
-  padding: 6px 14px;
+  padding: 4px 8px;
   border-radius: 20px;
   font-size: 14px;
   font-weight: 500;
   white-space: nowrap;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  text-align: center;
 }
-
-
+.text-center {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
 
 }
 
@@ -575,7 +579,7 @@ line-height: normal;
     
     <!-- Baris Contributor + Tags -->
     <div class="contributor-tags-row">
-      <!-- Contributor -->
+    <!-- Contributor -->
       <div class="contributor-card">
         <img src="{{asset ('img/mentor-1.png')}}" alt="Contributor" class="contributor-img">
         <div class="contributor-text">
@@ -594,10 +598,11 @@ line-height: normal;
         <span>#hashtag6</span>
       </div>
     </div>
+    </div>
 
     <!-- Kategori -->
     <div class="kategori-box">
-      <h5>Kategori</h5>
+      <h4 class="text-center">Kategori</h4>
       <div class="kategori-tags">
         <span>Kategori 1</span>
         <span>Kategori 2</span>
@@ -613,7 +618,7 @@ line-height: normal;
 
     <!-- Artikel Lainnya -->
     <div class="artikel-lain">
-      <h5 class="text-center text-bold">Artikel Lainnya</h5>
+      <h4 class="text-center">Artikel Lainnya</h4>
       <div class="artikel-grid">
         
         <!-- Card 1 -->
@@ -665,7 +670,5 @@ line-height: normal;
 
   </aside>
 </section>
-
-
 
 @endsection

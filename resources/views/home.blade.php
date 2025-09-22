@@ -18,12 +18,25 @@
       background: #f9f5ff;
       color: #1E1B4B;
     }
-   
+   .hero-img {
+    margin-top: -60px;
+    width: auto;
+    height: 90%;
+   }
+   .hero-img img {
+  max-height: 550px; /* sesuaikan aja */
+  width: auto;
+}
+
     .hero {
       position: relative;
       padding: 60px 40px;
       background: #f9f5ff;
     }
+    .hero-text {
+  margin-top: -100px; /* atur nilainya sesuai kebutuhan */
+}
+
     .hero h1 {
       font-size: 36px;
       font-weight: 600;
@@ -33,10 +46,29 @@
       font-size: 16px;
       color: #4B5563;
     }
-    .decor-top-left{
-      top:40px;
-      left:20px;
-    }
+    
+   .decor-top-left,
+.decor-bottom-left {
+  position: absolute;
+  left: 20px; /* kasih jarak fix dari kiri */
+  width: 42px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.decor-top-left {
+  top: 25px; /* jarak dari atas */
+}
+
+.decor-bottom-left {
+  bottom: 80px; /* jarak dari bawah (dibikin sama) */  
+}
+.decor-top-left img,
+.decor-bottom-left img {
+  width: 100%;
+  height: auto;
+  opacity: 1;
+}
     .btn-daftar {
       background: #FACC15;
       color: #000;
@@ -95,29 +127,6 @@
   cursor: pointer;
 }
 
-   .decor-top-left,
-.decor-bottom-left {
-  position: absolute;
-  left: 20px; /* kasih jarak fix dari kiri */
-  width: 50px;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.decor-top-left {
-  top: 40px; /* jarak dari atas */
-}
-
-.decor-bottom-left {
-  bottom: 60px; /* jarak dari bawah (dibikin sama) */
-}
-
-.decor-top-left img,
-.decor-bottom-left img {
-  width: 100%;
-  height: auto;
-  opacity: 1;
-}
 
     .fitur-list {
   list-style: none;
@@ -217,7 +226,7 @@
   grid-template-columns: repeat(auto-fit, minmax(220px, 2fr));
 }
 .program-content {
-  gap: 24px; /* bootstrap 5 udah support gap */
+  gap: 10px; /* bootstrap 5 udah support gap */
 }
 
 
@@ -231,7 +240,7 @@
   transition: transform 0.3s;
   display: flex;
   flex-direction: column;
-   width: 220px;   /* sama kayak mentor-card */
+   width: 270px;   /* sama kayak mentor-card */
   height: 330px;  /* bikin semua tinggi sejajar */
 }
 
@@ -245,6 +254,7 @@
   object-fit: cover; /* biar gambar gak gepeng */
   border-radius: 12px; /* rounded atas aja */
   display: block;
+  margin-top: 10px;
 }
 
 /* Konten card */
@@ -281,6 +291,7 @@
       border-radius: 999px;
       font-weight: bold;
       cursor: pointer;
+      margin-top: -10px;
     }
 
 .more-button {
@@ -531,6 +542,7 @@
       font-size: 12px;
       color: #333;
     }
+
 .custom-section {
   padding: 40px 20px;
   background: linear-gradient(to bottom, #f8f4ff, #ffffff);
@@ -551,17 +563,20 @@
 }
 
 .main-image {
-  max-width: 300px;
+  max-width: 400px;   /* atur ukuran lebih kecil */
+  width: 100%;        /* biar responsive */  /* wajib biar margin auto jalan */
   border-radius: 20px;
 }
+
 
 .text-content {
   flex: 1;
   max-width: 500px;
+    transform: translateX(-50px); /* geser kiri 50px */
 }
 
 .text-content h2 {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -1142,7 +1157,6 @@ body {
     <a href="#" data-target="sertifikasi" onclick="setActiveLink(this, event)">Sertifikasi</a>
     <a href="#" data-target="magang" onclick="setActiveLink(this, event)">Magang</a>
   </div>
-<div class="container"></div>
   <div class="program-wrapper">
   <div class="program-grid">
     <div class="row justify-content-center program-content content-reguler">
@@ -1590,7 +1604,6 @@ body {
     </div>
   </div>
 </div>
-  
 </section>
 
  <section class="artikel-section">
