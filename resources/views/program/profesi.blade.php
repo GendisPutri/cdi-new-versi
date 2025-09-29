@@ -154,6 +154,11 @@ body {
   overflow: hidden;
   margin-bottom: -100px;
 }
+.hero-section img {
+    height: 90%; /* biar cover penuh */
+    width: 100%;
+     object-fit: fill;
+  }
 .kursus-section {
   margin-top: -60px;
 }

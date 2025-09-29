@@ -347,7 +347,7 @@
 /* Mentor Grid */
 .mentor-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(1fr, minmax(220px, 1fr));
   gap: 16px;
 }
 
@@ -751,21 +751,37 @@
       }
     }
 @media (max-width: 991px) {
+  .hero-text {
+    margin-top: -10px;
+}
   .decor-bottom-left,
       .decor-top-left {
         display: none;
       }
-      .hero-image {
-  margin-top: 30px !important;
-  max-width: 50px;   /* batasi ukuran */
-  border-radius: 15px; /* sudut melengkung */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* kasih bayangan biar elegan */
-  transition: transform 0.3s ease; /* animasi halus */
+      .hero-img {
+    margin-top: -100px;
+    width: auto;
+    height: 90%;
+    margin-left: 100px;
 }
-
-.hero-image:hover {
-  transform: scale(1.05); /* zoom sedikit pas hover */
+.hero-img img {
+    max-height: 450px;
+    width: auto;
 }
+.btn-daftar,
+.btn-kurikulum{
+  margin-left: 20px;
+  padding: 10px 30px;
+}
+ .row .tombol-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    margin-top: 0;
+     z-index: 2;
+     position: relative;
+  }
 /* Reset default margin body */
 body {
   margin: 0;
@@ -794,14 +810,51 @@ body {
     border-radius: 20px;
     margin: 20px 10px;    /* biar nggak nempel layar */
   }
-
+.program-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
 }
-    @media (max-width: 400px) {
+
+.program-grid .card {
+  flex: 0 0 calc(50% - 20px); /* 2 kolom */
+}
+
+.card-content {
+  padding: 14px 16px;
+  flex: 1;
+  text-align: center; /* semua isi rata tengah */
+  display: flex;
+  flex-direction: column; /* susun vertikal */
+  gap: 4px; /* jarak antar elemen */
+}
+.mentor-grid {
+  display: flex;
+   flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+.mentor-grid .card {
+  flex: 1 1 calc(50% - 16px); /* supaya 2 kolom */
+  box-sizing: border-box;
+}
+.text-content{
+  margin-left: 15px;
+}
+.cta-button{
+  margin-left: 1px;
+}
+}
+    @media (max-width: 490px) {
       .decor-bottom-left,
       .decor-top-left {
         display: none;
       }
     
+    .hero-text{
+      margin-top: -20px; 
+    }
     .hero-text h1 {
   font-size: 24px; /* kecilin judul */
   line-height: 1.4; /* biar lebih rapih */
@@ -884,6 +937,10 @@ body {
 
 .mentor-section{
   display: none;
+}
+
+.mentor-hp{
+  display: block;
 }
 /* Mentor Card */
 .mentor-card {

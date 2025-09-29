@@ -18,6 +18,7 @@
     margin-bottom: 2rem;
   }
   .search-bar {
+    margin-top: -100px;
     width: 100%;
     max-width: 600px;
     border-radius: 30px;
@@ -59,8 +60,6 @@
     height: 120px;
     width: 100%;
     max-width: 100%;
-    object-fit: cover;
-    aspect-ratio: 1 / 1;
   }
   .badge-kategori {
     position: absolute;

@@ -132,6 +132,10 @@
       display: block;
     }
 
+    .menu-toggle{
+      display: none;
+    }
+
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -143,15 +147,65 @@
         gap: 10px;
         margin-top: 10px;
       }
-    }
+      .menu-toggle {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1001;
+    gap: 30px;
+  }
 
-/* Default Desktop */
-.menu-toggle {
-  display: none; /* Desktop gak keliatan */
+  .header {
+  position: relative;
+  height: 70px;
 }
 
+.menu {
+  position: relative;
+  left: 20px; /* menu di kiri */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.logo {
+  position: relative;
+  left: -190px;
+  top: 50%;
+  width: 150px;
+  transform: translate(-50%, -50%); /* pas di tengah */
+}
+  .nav-container {
+    position: fixed;
+    top: 8.3%;
+    left: -100%;
+    width: 80%;
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 15px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .nav-container.show {
+    left: 0;
+  }
+
+  .nav-link,
+  .dropdown-toggle {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+    }
+
+
+
 /* Mobile & Tablet */
-@media (max-width: 991px) {
+@media (max-width: 450px) {
   .menu-toggle {
     display: block;
     font-size: 28px;
@@ -160,10 +214,25 @@
     gap: 30px;
   }
 
-  .logo{
-    margin-left: 0 auto;
-  }
+  .header {
+  position: relative;
+  height: 70px;
+}
 
+.menu {
+  position: relative;
+  left: 20px; /* menu di kiri */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.logo {
+  position: relative;
+  left: -50px;
+  top: 50%;
+  width: 150px;
+  transform: translate(-50%, -50%); /* pas di tengah */
+}
   .nav-container {
     position: fixed;
     top: 8.3%;
@@ -197,9 +266,9 @@
     <header>
      <div class="container d-flex align-items-center justify-content-between">
       <div class="menu-toggle" id="menuToggle">☰</div>
-    <div class="logo">
-      <img src="{{asset ('img/logo 1.png')}}" alt="Campus Digital">
-    </div>
+      <div class="header">
+  <img src="{{asset ('img/logo 1.png')}}" class="logo" alt="Campus Digital">
+</div>
     <nav class="nav-container">
       <a class="nav-link" href="/">Beranda</a>
       <a class="nav-link" href="/tentang-kami">Tentang Kami</a>

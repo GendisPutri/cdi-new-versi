@@ -158,6 +158,11 @@ body {
   overflow: hidden;
   margin-bottom: -100px;
 }
+.hero-section img {
+    height: 90%; /* biar cover penuh */
+    width: 100%;
+     object-fit: fill;
+  }
 .kursus-section {
   margin-top: -60px;
 }
@@ -228,7 +233,7 @@ body {
     {{-- Kategori 2: Dunia Industri --}}
     <h2 class="fw-bold mb-2 text-black">Kursus Praktek Dunia Industri</h2>
     <p class="mb-4 text-black">Materi disiapkan agar siswa dan mahasiswa siap menghadapi praktek kerja nyata di industri.</p>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mb-5">
+    <div class="row row-cols-sm-2 row-cols-md-4 g-4 mb-5">
       @php
         $industri = [
           "Proyek CNC",
@@ -255,7 +260,7 @@ body {
     {{-- Kategori 3: Beasiswa --}}
     <h2 class="fw-bold mb-2 text-black">Beasiswa untuk Menambah Skillmu</h2>
     <p class="mb-4 text-black">Dapatkan kesempatan pelatihan gratis untuk mengembangkan skill baru yang relevan dengan kebutuhan kerja.</p>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+    <div class="row row-cols-sm-2 row-cols-md-4 g-4">
       @php
         $beasiswa = [
           "Beasiswa",

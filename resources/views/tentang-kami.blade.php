@@ -88,7 +88,7 @@
   padding: 0 20px; /* bikin tetap responsif */
 }
 
-    .section-sejarah .full-container {
+    .section-sejarah .container-fluid {
   background: linear-gradient(to right, #EAE7E7, #FFFFFF, #EAE7E7);
   padding: 40px;
   border-radius: 50px;
@@ -369,8 +369,17 @@
 /* Tablet & HP: jadi 2 kolom */
 @media (max-width: 768px) {
   .card-container {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
+.cabang-card {
+    position: relative;
+    width: 220px;
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #000;
+}
 }
 
 /* HP kecil: jadi 1 kolom (opsional, biar lebih rapi kalau layar kecil banget) */
@@ -378,15 +387,37 @@
   .card-container {
     grid-template-columns: 1fr;
   }
-  .section-sejarah .full-container {
-  background: linear-gradient(to right, #EAE7E7, #FFFFFF, #EAE7E7);
-  padding: 12px;
-  border-radius: 20px; /* 🔽 kecilin biar ga terlalu melengkung */
-  max-width: 2000px;    /* 🔽 kasih batas biar teks ga kepanjangan */
-  margin: 0 auto;      /* ✅ tetap center */
-  text-align: justify; /* ✅ rata kanan kiri */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+ .section-sejarah {
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: -60px;
 }
+
+.section-sejarah .container-fluid {
+  width: 100%; 
+  background: #F3F3F3; /* abu-abu muda */
+  padding: 10px;
+  border-radius: 12px;
+  text-align: justify;
+}
+
+ .section-sejarah h2 {
+      font-weight: bold;
+      margin-bottom: 30px;
+       text-align: center;
+    }
+
+    .section-sejarah span {
+      color: #C69CFF;
+    }
+
+    .section-sejarah p {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 16px;
+    }
+
   .hero-section {
     height: 80%; /* jangan dipaksa tinggi */
       margin-bottom: 50px;
@@ -396,7 +427,7 @@
   .hero-section img {
     height: 100%; /* biar cover penuh */
     width: 100%;
-     object-fit: cover;
+     object-fit: fill;
   }
 
   .hero-content {
@@ -418,6 +449,18 @@
     padding: 10px 20px;
   }
 }
+    .deskripsi-atas {
+        margin-top: 10px;
+        font-size: 15px; 
+        color: #333;
+        text-align: left;
+    }
+    .info-bawah{
+      font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+    text-align: left;
+    }
   </style>
 </head>
 <body>
@@ -441,7 +484,7 @@
   <!-- SEJARAH SECTION -->
   <section class="section-sejarah">
   <div class="wrapper">
-  <div class="full-container">
+  <div class="container-fluid">
       <h2>Sejarah <span>Campusdigital</span></h2>
       <p>
         Era Digital memberi pengaruh terhadap perkembangan teknologi yang sangat cepat. Perkembangan teknologi mendorong setiap pribadi untuk selalu siap berubah dan bertumbuh. Persaingan dunia usaha dan dunia industri di era digital juga semakin ketat. Hadirnya persaingan yang ketat di dunia usaha dan industri menuntut dukungan sumber daya manusia yang profesional dan kompeten. Kebutuhan akan SDM yang profesional dan kompeten melahirkan Campus Digital untuk menyajikan program pendidikan dan pelatihan dalam rangka peningkatan kompetensi sumber daya manusia yang unggul.

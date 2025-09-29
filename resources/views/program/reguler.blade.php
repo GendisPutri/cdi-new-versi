@@ -21,7 +21,7 @@
 .hero-bg-wrapper img {
   width: 100%;
   height: 90%;
-  object-fit: cover;
+  object-fit: fill;
   object-position: top;
 }
 
@@ -41,13 +41,14 @@
   flex-direction: column;
   justify-content: flex-start;
   padding: 40px 10%;
-  color: white;
 }
+
 
 .judul-hero {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 10px;
+  color: white;
 }
 
 .deskripsi-hero {
@@ -55,6 +56,7 @@
   line-height: 1.6;
   max-width: 700px;
   margin-bottom: 18px;
+  color: white;
 }
 
 .btn-hubungi {
@@ -81,6 +83,10 @@ body {
   min-height: 100vh;
 }
 
+
+.kursus-section {
+  margin-top: -100px;
+}
 .card-custom {
   background: #FFFFFF;
   border-radius: 16px;
@@ -147,17 +153,27 @@ body {
   font-size: 1.9rem;
   font-weight: bold;
   margin-bottom: 10px;
+  color: white;
 }
 .deskripsi-hero {
   margin-bottom: 10px;
+  color: white;
 }
 .hero-section {
   position: relative;
   height: 360px;
   width: 100%;
   overflow: hidden;
-  margin-bottom: -100px;
+  margin-bottom: -10px;
 }
+.hero-bg-wrapper .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(129, 0, 255, 0.35);
+}
+
 .kursus-section {
   margin-top: -60px;
 }
@@ -232,7 +248,7 @@ body {
     {{-- Kategori 2 --}}
     <h2 class="fw-bold mb-2 text-black">Kursus Kelas Tambah Penghasilan dengan Sosmed</h2>
     <p class="mb-4 text-black">Optimalkan sosial media untuk mendatangkan cuan, cocok buat UMKM maupun personal branding.</p>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mb-5">
+    <div class="row row-cols-2 row-cols-md-4 g-4 mb-5">
       @php
         $sosmed = [
           "Pelatihan Digital Marketing",
@@ -256,7 +272,7 @@ body {
     {{-- Kategori 3 --}}
     <h2 class="fw-bold mb-2 text-black">Kursus Kelas Jago IT</h2>
     <p class="mb-4 text-black">Bekali dirimu skill IT mulai dari pemrograman, desain web, hingga teknisi komputer.</p>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+    <div class="row row-cols-2 row-cols-md-4 g-4">
       @php
         $it = [
           "Pelatihan Web Developer",

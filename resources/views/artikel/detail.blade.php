@@ -227,6 +227,18 @@ line-height: normal;
       margin-bottom: 16px;
       text-align: justify;
     }
+    @media (max-width: 768px) {
+    /* Konten artikel (kanan) */
+.artikel-content {
+  flex: 1;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  height: 100%;
+}
+
+    }
     /* Responsive: untuk layar HP */
    @media (max-width: 500px) {
  .artikel-dekstop {
@@ -361,151 +373,154 @@ line-height: normal;
 
 </style>
 <div class="artikel-dekstop">
-
-<div class="container-detail-artikel artikel-dekstop">
-<!-- Sidebar Kiri -->
-  <aside class="sidebar-left">
-    <div class="contributor-card">
-      <img src="{{asset ('img/mentor-1.png')}}" alt="Contributor" class="contributor-img">
-      <div class="contributor-text">
-        <h4>Contributor</h4>
-        <p class="role">Publisher</p>
-      </div>
-    </div>
-
-    <div class="tags">
-      <span>#hashtag1</span>
-      <span>#hashtag2</span>
-      <span>#hashtag3</span>
-      <span>#hashtag4</span>
-      <span>#hashtag5</span>
-      <span>#hashtag6</span>
-    </div>
-
-    <hr style="width: 90%;">
-    <div class="kategori-box">
-      <h5>Kategori</h5>
-      <div class="kategori-tags">
-        <span>Kategori 1</span>
-        <span>Kategori 2</span>
-        <span>Kategori 3</span>
-        <span>Kategori 4</span>
-        <span>Kategori 5</span>
-        <span>Kategori 6</span>
-        <span>Kategori 7</span>
-        <span>Kategori 8</span>
-        <span>Kategori 9</span>
-      </div>
-    </div>
-
-    <hr width="90%;">
-    <div class="artikel-lain">
-      <h5>Artikel Lainnya</h5>
-      <div class="artikel-card">
-        <div class="card-image">
-          <img src="{{asset ('img/img_article.png')}}" alt="Artikel">
-          <span class="badge">Kategori 1</span>
-        </div>
-        <div class="card-overlay">
-          <p>Artikel Pelatihan Digital Marketing sssssssss ssssssss ssssssss ssssss</p>
+  <div class="container-detail-artikel artikel-dekstop">
+    
+    <!-- Sidebar Kiri -->
+    <aside class="sidebar-left">
+      <div class="contributor-card">
+        <img src="{{asset ('img/mentor-1.png')}}" alt="Contributor" class="contributor-img">
+        <div class="contributor-text">
+          <h4>Contributor</h4>
+          <p class="role">Publisher</p>
         </div>
       </div>
-       <div class="artikel-lain">
-      <div class="artikel-card">
-        <div class="card-image">
-          <img src="{{asset ('img/img_article.png')}}" alt="Artikel">
-          <span class="badge">Kategori 1</span>
-        </div>
-        <div class="card-overlay">
-          <p>Artikel Pelatihan Digital Marketing sssssssss ssssssss ssssssss ssssss</p>
+
+      <div class="tags">
+        <span>#hashtag1</span>
+        <span>#hashtag2</span>
+        <span>#hashtag3</span>
+        <span>#hashtag4</span>
+        <span>#hashtag5</span>
+        <span>#hashtag6</span>
+      </div>
+
+      <hr style="width: 90%;">
+      <div class="kategori-box">
+        <h5>Kategori</h5>
+        <div class="kategori-tags">
+          <span>Kategori 1</span>
+          <span>Kategori 2</span>
+          <span>Kategori 3</span>
+          <span>Kategori 4</span>
+          <span>Kategori 5</span>
+          <span>Kategori 6</span>
+          <span>Kategori 7</span>
+          <span>Kategori 8</span>
+          <span>Kategori 9</span>
         </div>
       </div>
-       <div class="artikel-lain">
-      <div class="artikel-card">
-        <div class="card-image">
-          <img src="{{asset ('img/img_article.png')}}" alt="Artikel">
-          <span class="badge">Kategori 1</span>
+
+      <hr style="width: 90%;">
+      <div class="artikel-lain">
+        <h5>Artikel Lainnya</h5>
+
+        <!-- Card 1 -->
+        <div class="artikel-card">
+          <div class="card-image">
+            <img src="{{asset ('img/img_article.png')}}" alt="Artikel">
+            <span class="badge">Kategori 1</span>
+          </div>
+          <div class="card-overlay">
+            <p>Artikel Pelatihan Digital Marketing sssssssss ssssssss ssssssss ssssss</p>
+          </div>
         </div>
-        <div class="card-overlay">
-          <p>Artikel Pelatihan Digital Marketing sssssssss ssssssss ssssssss ssssss</p>
+
+        <!-- Card 2 -->
+        <div class="artikel-card">
+          <div class="card-image">
+            <img src="{{asset ('img/img_article.png')}}" alt="Artikel">
+            <span class="badge">Kategori 1</span>
+          </div>
+          <div class="card-overlay">
+            <p>Artikel Pelatihan Digital Marketing sssssssss ssssssss ssssssss ssssss</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="artikel-card">
+          <div class="card-image">
+            <img src="{{asset ('img/img_article.png')}}" alt="Artikel">
+            <span class="badge">Kategori 1</span>
+          </div>
+          <div class="card-overlay">
+            <p>Artikel Pelatihan Digital Marketing sssssssss ssssssss ssssssss ssssss</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="artikel-card">
+          <div class="card-image">
+            <img src="{{asset ('img/img_article.png')}}" alt="Artikel">
+            <span class="badge">Kategori 1</span>
+          </div>
+          <div class="card-overlay">
+            <p>Artikel Pelatihan Digital Marketing sssssssss ssssssss ssssssss ssssss</p>
+          </div>
         </div>
       </div>
-       <div class="artikel-lain">
-      <div class="artikel-card">
-        <div class="card-image">
-          <img src="{{asset ('img/img_article.png')}}" alt="Artikel">
-          <span class="badge">Kategori 1</span>
-        </div>
-        <div class="card-overlay">
-          <p>Artikel Pelatihan Digital Marketing sssssssss ssssssss ssssssss ssssss</p>
-        </div>
+    </aside>
+
+    <!-- Konten Artikel Kanan -->
+    <div class="artikel-content">
+      <div class="breadcrumb">
+        <a href="#">Beranda</a> / <span>TikTok Bisa Jadi Jalan Pintas UKM Buat Tampil & Dikenal</span>
       </div>
+
+      <!-- judul artikel -->
+      <h1>TikTok Bisa Jadi Jalan Pintas UKM Buat Tampil & Dikenal</h1>
+
+      <!-- meta -->
+      <div class="meta">
+        <img src="{{ asset('img/icondate.png') }}" alt="icon">
+        <span>Dipublikasikan tanggal 10 Juli 2023, 10:10 WIB</span>
+      </div>
+
+      <!-- gambar utama -->
+      <img src="{{ asset('img/cover.png') }}" alt="TikTok UKM" class="featured-img">
+
+      <!-- isi artikel -->
+      <p>Pernah nggak sih kamu scroll TikTok, terus tiba-tiba nemu video jualan yang tampilannya sederhana, tapi bikin pengen beli? Bahkan kadang bukan brand besar, tapi justru usaha rumahan yang bisa viral dan dapet orderan ribuan. Nah, itulah kekuatan TikTok dan ini alasan kenapa UKM perlu banget masuk ke dunia TikTok Marketing. TikTok sekarang bukan cuma tempat buat joget atau hiburan semata. Banyak banget pelaku usaha kecil yang sukses bangun brand, naikin penjualan, bahkan dikenal luas cuma lewat video pendek. Asal tahu cara mainnya, kamu juga bisa!</p>
+
+      <h2>Kenapa TikTok Cocok Buat UKM?</h2>
+      <p>Algoritma TikTok unik banget. Nggak peduli kamu baru mulai atau belum punya followers, konten kamu tetap bisa masuk FYP (For You Page). Artinya, peluang buat dilihat banyak orang itu besar banget bahkan tanpa harus pasang iklan mahal. Selain itu, mayoritas pengguna TikTok di Indonesia itu aktif, suka eksplor, dan suka beli barang yang unik. Jadi kalau produk kamu punya keunikan atau cerita menarik, bisa banget dimanfaatin di TikTok.</p>
+
+      <h2>Cara Praktis Mulai TikTok Marketing Buat UKM</h2>
+      <p>Kamu nggak perlu kamera mahal atau skill edit tingkat dewa buat mulai. Cukup modal HP dan ide kreatif. Nih langkah-langkah dasarnya:</p>
+      <ul>
+        <li><strong>1. Kenalin Dulu Audiens Kamu</strong><br>Sebelum bikin konten, coba pikirin dulu: siapa yang kamu target? Remaja, ibu-ibu muda, pekerja kantoran, atau siapa? Dari situ kamu bisa tentuin gaya konten dan bahasa yang cocok.</li>
+        <li><strong>2. Ikuti Tren, Tapi Tetap Autentik</strong><br>Scroll TikTok buat lihat tren terbaru. Tapi jangan asal ikut. Gabungkan tren dengan karakter produk atau cerita unik dari usahamu. Misalnya, tren lagu viral bisa dipakai untuk nunjukin proses bikin produk kamu.</li>
+        <li><strong>3. Konten Simpel Tapi Menarik</strong><br>Kamu bisa mulai dari konten seperti:
+          <ul>
+            <li>Proses pembuatan produk (behind the scene)</li>
+            <li>Testimoni pelanggan</li>
+            <li>Story singkat kenapa kamu mulai usaha</li>
+            <li>Tips singkat seputar produk kamu</li>
+          </ul>
+        </li>
+        <li><strong>4. Pakai Hashtag yang Relevan</strong><br>Jangan lupakan hashtag. Gunakan yang sesuai dengan produk, lokasi, dan tren. Misalnya: #UKMIndonesia #ProdukLokal #FYPIndonesia</li>
+        <li><strong>5. Konsisten Upload & Interaksi</strong><br>Upload 2–4 video per minggu aja udah cukup. Jangan lupa juga balas komentar, bikin polling di kolom tanya, atau duet sama video orang lain buat tambah exposure.</li>
+      </ul>
+
+      <h2>Contoh UKM yang Sukses Lewat TikTok</h2>
+      <p>Salah satu contohnya adalah usaha minuman lokal yang cuma modal dapur rumah. Mereka upload konten proses pembuatan minuman sambil cerita lucu tentang pelanggan, dan... boom! Videonya viral. Sekarang, mereka punya cabang di berbagai kota.</p>
+
+      <p><strong>Hal yang Perlu Dihindari</strong></p>
+      <ul>
+        <li>Cuma fokus jualan, nggak bangun koneksi</li>
+        <li>Nggak ikut tren, jadi keliatan kaku</li>
+        <li>Upload jarang-jarang, susah naik</li>
+        <li>Konten template semua, nggak ada ciri khas</li>
+      </ul>
+
+      <p>TikTok bukan lagi sekadar aplikasi hiburan, tapi sudah menjadi salah satu platform pemasaran paling potensial untuk UKM. Dengan algoritma FYP (For You Page), konten sederhana dan autentik tetap berpeluang tinggi untuk viral tanpa harus berbiaya mahal. Pelatihan dan panduan dari <strong>Campus Digital</strong> seperti <u>Cara TikTok Marketing Anti-Mainstream!</u> dan <u>Tips TikTok Marketing Paling Ampuh Yang Perlu Kamu Ketahui!</u> sangat membantu UKM dalam memahami langkah praktis membuat konten menarik, mengoptimalkan hashtag, dan memanfaatkan fitur TikTok Ads. Dengan bekal ini, UKM bisa tampil menonjol, membangun koneksi dengan audiens, dan meningkatkan brand awareness secara signifikan.</p>
+
+      <p>
+        Langkah selanjutnya? Cukup mulai dari yang sederhana: buat video proses produksi, tunjukkan testimoni pelanggan, atau ceritakan kisah brand-mu dengan gaya yang jujur dan manusiawi. Jangan lupa untuk aktifkan interaksi dan gunakan hashtag yang relevan. Jika butuh boosting, kamu juga bisa memanfaatkan TikTok Ads serta fitur TikTok Shop seperti yang dijelaskan di <u>Campus Digital</u>, atau mempertimbangkan layanan jasa kelola sosial media dari <u>Campus Creative</u>. Intinya: semakin sering dan konsisten kamu tampil, semakin besar peluang untuk dipercaya, dipilih, dan dibuat loyal oleh pelanggan.
+      </p>
     </div>
-  </aside>
-
-  <!-- Konten Artikel Kanan -->
-  <div class="artikel-content">
-    {{-- copy-paste isi artikel yang tadi --}}
-     <div class="breadcrumb">
-      <a href="#">Beranda</a> / <span>TikTok Bisa Jadi Jalan Pintas UKM Buat Tampil & Dikenal</span>
-    </div>
-
-    <!-- judul artikel -->
-    <h1>TikTok Bisa Jadi Jalan Pintas UKM Buat Tampil & Dikenal</h1>
-
-    <!-- meta -->
-    <div class="meta">
-      <img src="{{ asset('img/icondate.png') }}" alt="icon">
-      <span>Dipublikasikan tanggal 10 Juli 2023, 10:10 WIB</span>
-    </div>
-
-    <!-- gambar utama -->
-    <img src="{{ asset('img/cover.png') }}" alt="TikTok UKM" class="featured-img">
-
-    <!-- isi artikel -->
-    <p>Pernah nggak sih kamu scroll TikTok, terus tiba-tiba nemu video jualan yang tampilannya sederhana, tapi bikin pengen beli? Bahkan kadang bukan brand besar, tapi justru usaha rumahan yang bisa viral dan dapet orderan ribuan. Nah, itulah kekuatan TikTok dan ini alasan kenapa UKM perlu banget masuk ke dunia TikTok Marketing. TikTok sekarang bukan cuma tempat buat joget atau hiburan semata. Banyak banget pelaku usaha kecil yang sukses bangun brand, naikin penjualan, bahkan dikenal luas cuma lewat video pendek. Asal tahu cara mainnya, kamu juga bisa!</p>
-
-    <h2>Kenapa TikTok Cocok Buat UKM?</h2>
-    <p>Algoritma TikTok unik banget. Nggak peduli kamu baru mulai atau belum punya followers, konten kamu tetap bisa masuk FYP (For You Page). Artinya, peluang buat dilihat banyak orang itu besar banget bahkan tanpa harus pasang iklan mahal. Selain itu, mayoritas pengguna TikTok di Indonesia itu aktif, suka eksplor, dan suka beli barang yang unik. Jadi kalau produk kamu punya keunikan atau cerita menarik, bisa banget dimanfaatin di TikTok.</p>
-
-    <h2>Cara Praktis Mulai TikTok Marketing Buat UKM</h2>
-    <p>Kamu nggak perlu kamera mahal atau skill edit tingkat dewa buat mulai. Cukup modal HP dan ide kreatif. Nih langkah-langkah dasarnya:</p>
-    <ul>
-      <li><strong>1. Kenalin Dulu Audiens Kamu</strong><br>Sebelum bikin konten, coba pikirin dulu: siapa yang kamu target? Remaja, ibu-ibu muda, pekerja kantoran, atau siapa? Dari situ kamu bisa tentuin gaya konten dan bahasa yang cocok.</li>
-      <li><strong>2. Ikuti Tren, Tapi Tetap Autentik</strong><br>Scroll TikTok buat lihat tren terbaru. Tapi jangan asal ikut. Gabungkan tren dengan karakter produk atau cerita unik dari usahamu. Misalnya, tren lagu viral bisa dipakai untuk nunjukin proses bikin produk kamu.</li>
-      <li><strong>3. Konten Simpel Tapi Menarik</strong><br>Kamu bisa mulai dari konten seperti:
-        <ul>
-          <li>Proses pembuatan produk (behind the scene)</li>
-          <li>Testimoni pelanggan</li>
-          <li>Story singkat kenapa kamu mulai usaha</li>
-          <li>Tips singkat seputar produk kamu</li>
-        </ul>
-      </li>
-      <li><strong>4. Pakai Hashtag yang Relevan</strong><br>Jangan lupakan hashtag. Gunakan yang sesuai dengan produk, lokasi, dan tren. Misalnya: #UKMIndonesia #ProdukLokal #FYPIndonesia</li>
-      <li><strong>5. Konsisten Upload & Interaksi</strong><br>Upload 2–4 video per minggu aja udah cukup. Jangan lupa juga balas komentar, bikin polling di kolom tanya, atau duet sama video orang lain buat tambah exposure.</li>
-    </ul>
-
-    <h2>Contoh UKM yang Sukses Lewat TikTok</h2>
-    <p>Salah satu contohnya adalah usaha minuman lokal yang cuma modal dapur rumah. Mereka upload konten proses pembuatan minuman sambil cerita lucu tentang pelanggan, dan... boom! Videonya viral. Sekarang, mereka punya cabang di berbagai kota.</p>
-
-    <p>Hal yang Perlu Dihindari</p>
-    <ul>
-      <li>Cuma fokus jualan, nggak bangun koneksi</li>
-      <li>Nggak ikut tren, jadi keliatan kaku</li>
-      <li>Upload jarang-jarang, susah naik</li>
-      <li>Konten template semua, nggak ada ciri khas</li>
-    </ul>
-
-    <p>TikTok bukan lagi sekadar aplikasi hiburan, tapi sudah menjadi salah satu platform pemasaran paling potensial untuk UKM. Dengan algoritma FYP (For You Page), konten sederhana dan autentik tetap berpeluang tinggi untuk viral tanpa harus berbiaya mahal. Pelatihan dan panduan dari <strong>Campus Digital</strong> seperti <u>Cara TikTok Marketing Anti-Mainstream!</u> dan <u>Tips TikTok Marketing Paling Ampuh Yang Perlu Kamu Ketahui!</u> sangat membantu UKM dalam memahami langkah praktis membuat konten menarik, mengoptimalkan hashtag, dan memanfaatkan fitur TikTok Ads. Dengan bekal ini, UKM bisa tampil menonjol, membangun koneksi dengan audiens, dan meningkatkan brand awareness secara signifikan.</p>
-
-    <p>
-      Langkah selanjutnya? Cukup mulai dari yang sederhana: buat video proses produksi, tunjukkan testimoni pelanggan, atau ceritakan kisah brand-mu dengan gaya yang jujur dan manusiawi. Jangan lupa untuk aktifkan interaksi dan gunakan hashtag yang relevan. Jika butuh boosting, kamu juga bisa memanfaatkan TikTok Ads serta fitur TikTok Shop seperti yang dijelaskan di <u>Campus Digital</u>, atau mempertimbangkan layanan jasa kelola sosial media dari <u>Campus Creative</u>. Intinya: semakin sering dan konsisten kamu tampil, semakin besar peluang untuk dipercaya, dipilih, dan dibuat loyal oleh pelanggan.
-    </p>
-  </div>
-    <!-- dst isi artikel -->
   </div>
 </div>
-</section>
+
 
 <section class="artikel-hp">
 
